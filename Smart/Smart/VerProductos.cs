@@ -33,7 +33,7 @@ namespace Smart
 
             if(cmbCriterio.Text == "Código Externo")
             {
-                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE CBExterno = '" + txtbusqueda.Text + "'";
+                consulta = "Select Producto.CBExterno, Producto.CBinterno, Producto.Fecha, Producto.Alto, Producto.Largo, Producto.Ancho, Producto.Volumen, Producto.Peso, Producto.Costo, Producto.Precio, Producto.Desc_Larga, Producto.Desc_Corta, Producto.Id_marca, Categoria.Descripción FROM Producto, Categoria, Asignado WHERE Producto.CBExterno = '" + txtbusqueda.Text + "' and Producto.CBExterno = Asignado.CBExterno_Producto and Asignado.ID_Categoria = Categoria.Id_cat";
             }
             else if (cmbCriterio.Text == "Código Interno")
             {
