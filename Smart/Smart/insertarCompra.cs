@@ -23,5 +23,10 @@ namespace Smart
             admin.Show();
             this.Hide();
         }
+
+        private void labelListaDeProducto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

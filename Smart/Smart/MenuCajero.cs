@@ -35,5 +35,12 @@ namespace Smart
         {
             MessageBox.Show("Proyecto S-mart: Supermercado Inteligente realizado por Gaudy Blanco Meneses, Larissa Arroyo Castillo y José Eduardo Picado Salas para el curso Bases de Datos 1 de la Escuela de Ciencias de la Computación e Informática de la UCR.", "Acerca de");
         }
+
+        private void insertarCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertarCompra compra = new InsertarCompra();
+            compra.Show();
+            this.Hide();
+        }
     }
 }

@@ -216,3 +216,11 @@ pip-log.txt
 .mr.developer.cfg
 Smart/Smart/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 Smart/Smart.v11.suo
+Smart/Smart/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+*.cache
+Smart/Smart/obj/Debug/Smart.csproj.GenerateResource.Cache
+*.Cache
+Smart/Smart/obj/Debug/Smart.exe
+*.pdb
+Smart/Smart/obj/Debug/Smart.csproj.GenerateResource.Cache
+*.Cache

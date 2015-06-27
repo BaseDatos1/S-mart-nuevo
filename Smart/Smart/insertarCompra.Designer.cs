@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsertarCompra));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.labelListaDeProducto = new System.Windows.Forms.Label();
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,14 +40,13 @@
             this.labelFecha = new System.Windows.Forms.Label();
             this.labelHora = new System.Windows.Forms.Label();
             this.btnatras = new System.Windows.Forms.Button();
+            this.displayProductos = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.displayProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.labelListaDeProducto);
             this.groupBox1.Controls.Add(this.txtProducto);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label3);
@@ -60,29 +56,12 @@
             this.groupBox1.Controls.Add(this.labelCliente);
             this.groupBox1.Controls.Add(this.labelCajero);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(35, 39);
+            this.groupBox1.Location = new System.Drawing.Point(164, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(708, 580);
+            this.groupBox1.Size = new System.Drawing.Size(447, 166);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del producto";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 190);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(666, 383);
-            this.dataGridView1.TabIndex = 20;
-            // 
-            // labelListaDeProducto
-            // 
-            this.labelListaDeProducto.AutoSize = true;
-            this.labelListaDeProducto.Location = new System.Drawing.Point(18, 165);
-            this.labelListaDeProducto.Name = "labelListaDeProducto";
-            this.labelListaDeProducto.Size = new System.Drawing.Size(119, 16);
-            this.labelListaDeProducto.TabIndex = 19;
-            this.labelListaDeProducto.Text = "Lista de Productos";
             // 
             // txtProducto
             // 
@@ -159,7 +138,7 @@
             // 
             this.labelFecha.AutoSize = true;
             this.labelFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.labelFecha.Location = new System.Drawing.Point(655, 20);
+            this.labelFecha.Location = new System.Drawing.Point(648, 20);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(72, 16);
             this.labelFecha.TabIndex = 2;
@@ -169,7 +148,7 @@
             // 
             this.labelHora.AutoSize = true;
             this.labelHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.labelHora.Location = new System.Drawing.Point(733, 20);
+            this.labelHora.Location = new System.Drawing.Point(726, 20);
             this.labelHora.Name = "labelHora";
             this.labelHora.Size = new System.Drawing.Size(39, 16);
             this.labelHora.TabIndex = 3;
@@ -186,23 +165,32 @@
             this.btnatras.UseVisualStyleBackColor = true;
             this.btnatras.Click += new System.EventHandler(this.btnatras_Click);
             // 
-            // Compra
+            // displayProductos
+            // 
+            this.displayProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.displayProductos.Location = new System.Drawing.Point(59, 202);
+            this.displayProductos.Name = "displayProductos";
+            this.displayProductos.Size = new System.Drawing.Size(663, 402);
+            this.displayProductos.TabIndex = 20;
+            // 
+            // InsertarCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 661);
+            this.Controls.Add(this.displayProductos);
             this.Controls.Add(this.btnatras);
             this.Controls.Add(this.labelHora);
             this.Controls.Add(this.labelFecha);
             this.Controls.Add(this.groupBox1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Compra";
+            this.Name = "InsertarCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.displayProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,10 +207,9 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelID;
-        private System.Windows.Forms.Label labelListaDeProducto;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Label labelHora;
         private System.Windows.Forms.Button btnatras;
+        private System.Windows.Forms.DataGridView displayProductos;
     }
 }

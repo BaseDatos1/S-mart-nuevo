@@ -45,11 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoBaseDatos.cs" />
-    <Compile Include="insertarCompra.cs">
+    <Compile Include="InsertarCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="insertarCompra.Designer.cs">
-      <DependentUpon>insertarCompra.cs</DependentUpon>
+    <Compile Include="InsertarCompra.Designer.cs">
+      <DependentUpon>InsertarCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="InsertarSucursal.cs">
       <SubType>Form</SubType>
@@ -113,8 +113,8 @@
     <Compile Include="VerProductos.Designer.cs">
       <DependentUpon>VerProductos.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="insertarCompra.resx">
-      <DependentUpon>insertarCompra.cs</DependentUpon>
+    <EmbeddedResource Include="InsertarCompra.resx">
+      <DependentUpon>InsertarCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InsertarSucursal.resx">
       <DependentUpon>InsertarSucursal.cs</DependentUpon>

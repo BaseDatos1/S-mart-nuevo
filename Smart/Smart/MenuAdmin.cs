@@ -58,5 +58,12 @@ namespace Smart
             this.Hide(); 
         }
 
+        private void insertarCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertarCompra compra = new InsertarCompra();
+            compra.Show();
+            this.Hide();
+        }
+
     }
 }
