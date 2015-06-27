@@ -93,9 +93,9 @@
             "Precio Actual",
             "Fecha de vencimiento",
             "Peso",
-            "Alto",
-            "Largo",
-            "Ancho"});
+            "Medida de alto (cm)",
+            "Medida de largo (cm)",
+            "Medida de ancho (cm)"});
             this.cmbCriterio.Location = new System.Drawing.Point(89, 28);
             this.cmbCriterio.Name = "cmbCriterio";
             this.cmbCriterio.Size = new System.Drawing.Size(176, 24);

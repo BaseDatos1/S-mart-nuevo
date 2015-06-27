@@ -67,8 +67,8 @@ namespace Smart
             DataTable table = new DataTable();
 
             dataAdapter.Fill(table);
-			
-			return table;
+
+            return table;
         }
 
         /*Metodo para insertar un nuevo producto en la base de datos*/
@@ -131,25 +131,25 @@ namespace Smart
         /*Método para actualizar un dataGrid*/
         public void llenarTabla(string consulta, DataGridView datagridView)
         {
-            DataTable  tabla  =  null; 
-                 try 
-                 { 
-                     tabla  =  ejecutarConsultaTabla(consulta); 
-                     BindingSource  bindingSource  =  new  BindingSource(); 
-                     bindingSource.DataSource  =  tabla; 
-       
-                     datagridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader); 
-                     datagridView.DataSource  =  bindingSource; 
-                         for  (int  i  =  0;  i  <  datagridView.ColumnCount;  i++) 
-                         { 
-                             datagridView.Columns[i].Width  =  100; 
-                         } 
-                 } 
-                 catch  (SqlException  ex) 
-                 { 
-                     string  mensajeError  =  ex.ToString(); 
-                     MessageBox.Show(mensajeError); 
-                 } 
+            DataTable tabla = null;
+            try
+            {
+                tabla = ejecutarConsultaTabla(consulta);
+                BindingSource bindingSource = new BindingSource();
+                bindingSource.DataSource = tabla;
+
+                datagridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+                datagridView.DataSource = bindingSource;
+                for (int i = 0; i < datagridView.ColumnCount; i++)
+                {
+                    datagridView.Columns[i].Width = 100;
+                }
+            }
+            catch (SqlException ex)
+            {
+                string mensajeError = ex.ToString();
+                MessageBox.Show(mensajeError);
+            }
         }
 
     }

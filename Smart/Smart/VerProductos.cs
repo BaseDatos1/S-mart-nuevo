@@ -30,46 +30,46 @@ namespace Smart
         private void button1_Click(object sender, EventArgs e)
         {
             String consulta = "";
-            String criterio = "";
 
             if(cmbCriterio.Text == "Código Externo")
             {
-                criterio = "CBExterno";
-                baseDatos.llenarTabla(consulta, displayProductos);
+                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE CBExterno = '" + txtbusqueda.Text + "'";
             }
             else if (cmbCriterio.Text == "Código Interno")
             {
-                criterio = "CBinterno";
+                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE CBinterno = '" + txtbusqueda.Text + "'";
+      
             }
             else if (cmbCriterio.Text == "Costo")
             {
-                criterio = "Costo";
+                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE Costo = '" + int.Parse(txtbusqueda.Text) + "'";
             }
             else if (cmbCriterio.Text == "Precio Actual")
             {
-                criterio = "Precio";
+                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE Precio = '" + int.Parse(txtbusqueda.Text) + "'";
+
             }
             else if (cmbCriterio.Text == "Fecha de vencimiento")
             {
-                criterio = "Fecha";
+                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE Fecha = '" + txtbusqueda.Text + "'";
             }
             else if (cmbCriterio.Text == "Peso")
             {
-                criterio = "Peso";
+                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE Peso = '" + int.Parse(txtbusqueda.Text) + "'";
             }
-            else if (cmbCriterio.Text == "Alto")
+            else if (cmbCriterio.Text == "Medida de alto (cm)")
             {
-                criterio = "Alto";
+                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE Alto = '" + int.Parse(txtbusqueda.Text) + "'";
             }
-            else if (cmbCriterio.Text == "Largo")
+            else if (cmbCriterio.Text == "Medida de largo (cm)")
             {
-                criterio = "Largo";
+                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE Largo = '" + int.Parse(txtbusqueda.Text) + "'";
             }
-            else if (cmbCriterio.Text == "Ancho")
+            else if (cmbCriterio.Text == "Medida de ancho (cm)")
             {
-                criterio = "Ancho";
+                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE Ancho = '" + int.Parse(txtbusqueda.Text) + "'";
             }
-            consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE " + criterio + " = " + txtbusqueda.Text; 
+            baseDatos.llenarTabla(consulta, displayProductos);
         }
     }
 }
