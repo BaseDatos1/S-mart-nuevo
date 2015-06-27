@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">S-Mart</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_iniciar_sesion">Iniciar Sesion</string>
+    <string name="title_activity_registrar_cliente">Registrar Cliente</string>
+</resources>
