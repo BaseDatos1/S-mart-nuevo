@@ -101,6 +101,12 @@
     <Compile Include="Registrarse.Designer.cs">
       <DependentUpon>Registrarse.cs</DependentUpon>
     </Compile>
+    <Compile Include="VerProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerProductos.Designer.cs">
+      <DependentUpon>VerProductos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="InsertarSucursal.resx">
       <DependentUpon>InsertarSucursal.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +142,9 @@
     </Compile>
     <EmbeddedResource Include="Registrarse.resx">
       <DependentUpon>Registrarse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerProductos.resx">
+      <DependentUpon>VerProductos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

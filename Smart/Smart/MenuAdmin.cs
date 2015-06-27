@@ -51,5 +51,12 @@ namespace Smart
              
         }
 
+        private void productoToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            VerProductos verprod = new VerProductos();
+            verprod.Show();
+            this.Hide(); 
+        }
+
     }
 }

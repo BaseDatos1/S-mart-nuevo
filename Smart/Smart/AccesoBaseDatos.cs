@@ -113,27 +113,44 @@ namespace Smart
         /*Metodo para cargar un combobox*/
         public void cargaCombobox(ComboBox c1, string consulta)
         {
-            SqlConnection sqlConnection = new SqlConnection(conexion);
-            sqlConnection.Open();
-
+          
             SqlDataReader datos = null;
-            SqlCommand comando = null;
-
-            try
-            {
-                comando = new SqlCommand(consulta, sqlConnection);
-                datos = comando.ExecuteReader();
+            datos = ejecutarConsulta(consulta);
+           
+                if(datos != null)
+                {
                 while (datos.Read())
                 {
                     c1.Items.Add(datos.GetString(0));
                 }
 
             }
-            catch (SqlException ex)
-            {
-                string mensajeError = ex.ToString();
-                MessageBox.Show(mensajeError);
-            }
+            
         }
+
+        /*Método para actualizar un dataGrid*/
+        public void llenarTabla(string consulta, DataGridView datagridView)
+        {
+            DataTable  tabla  =  null; 
+                 try 
+                 { 
+                     tabla  =  ejecutarConsultaTabla(consulta); 
+                     BindingSource  bindingSource  =  new  BindingSource(); 
+                     bindingSource.DataSource  =  tabla; 
+       
+                     datagridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader); 
+                     datagridView.DataSource  =  bindingSource; 
+                         for  (int  i  =  0;  i  <  datagridView.ColumnCount;  i++) 
+                         { 
+                             datagridView.Columns[i].Width  =  100; 
+                         } 
+                 } 
+                 catch  (SqlException  ex) 
+                 { 
+                     string  mensajeError  =  ex.ToString(); 
+                     MessageBox.Show(mensajeError); 
+                 } 
+        }
+
     }
 }

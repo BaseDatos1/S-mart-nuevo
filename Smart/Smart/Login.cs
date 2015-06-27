@@ -46,6 +46,13 @@ namespace Smart
                     cajero.Show();
                     this.Hide();
                 }
+                else
+                {
+                    MessageBox.Show("Se ingresó un tipo de usuario no válido", "Iniciar sesión",
+       MessageBoxButtons.OK,
+       MessageBoxIcon.Exclamation,
+       MessageBoxDefaultButton.Button1);
+                }
             }
             else {
                 MessageBox.Show("Debe ingresar todos los datos correspondientes al usuario", "Iniciar sesión",
