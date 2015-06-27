@@ -121,5 +121,30 @@ namespace Smart
             baseDatos.cargaCombobox(cmbMarca, consulta);
         }
 
+
+        private void txtCodigoBarras_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(e);
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noEsGuion(e);
+        }  
+
+
+        //Verifica que en los "textbox" no se puedan ingresar ';' ni '-'
+        public static void noEsGuion(KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '-' || e.KeyChar == ';')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+              
     }
 }

@@ -90,6 +90,7 @@
             this.txtConfirmacion.PasswordChar = '*';
             this.txtConfirmacion.Size = new System.Drawing.Size(179, 22);
             this.txtConfirmacion.TabIndex = 8;
+            this.txtConfirmacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConfirmacion_KeyPress);
             // 
             // label9
             // 
@@ -108,6 +109,7 @@
             this.txtEmail.Size = new System.Drawing.Size(179, 22);
             this.txtEmail.TabIndex = 6;
             this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // label8
@@ -233,6 +235,7 @@
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(179, 22);
             this.txtContraseña.TabIndex = 7;
+            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContrasena_KeyPress);
             // 
             // txtCedula
             // 

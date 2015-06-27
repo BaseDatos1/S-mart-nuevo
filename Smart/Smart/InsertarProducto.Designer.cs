@@ -132,6 +132,7 @@
             this.txtDCorta.Name = "txtDCorta";
             this.txtDCorta.Size = new System.Drawing.Size(223, 22);
             this.txtDCorta.TabIndex = 12;
+            this.txtDCorta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // txtDLarga
             // 
@@ -141,6 +142,7 @@
             this.txtDLarga.Name = "txtDLarga";
             this.txtDLarga.Size = new System.Drawing.Size(223, 77);
             this.txtDLarga.TabIndex = 11;
+            this.txtDLarga.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // label14
             // 
@@ -256,6 +258,7 @@
             this.txtInterno.Name = "txtInterno";
             this.txtInterno.Size = new System.Drawing.Size(223, 22);
             this.txtInterno.TabIndex = 2;
+            this.txtInterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoBarras_KeyPress);
             // 
             // txtExterno
             // 
@@ -264,6 +267,7 @@
             this.txtExterno.Name = "txtExterno";
             this.txtExterno.Size = new System.Drawing.Size(223, 22);
             this.txtExterno.TabIndex = 1;
+            this.txtExterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoBarras_KeyPress);
             // 
             // label13
             // 

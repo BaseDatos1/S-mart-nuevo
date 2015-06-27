@@ -112,8 +112,7 @@ namespace Smart
                 txtEmail.ForeColor = Color.Gray;
             }
         }
-
-
+        
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             soloNumeros(e);
@@ -123,14 +122,17 @@ namespace Smart
         {
             soloLetras(e);
         }
+
         public void txtApellido1_KeyPress(object sender, KeyPressEventArgs e)
         {
             soloLetras(e);
         }
+
         public void txtApellido2_KeyPress(object sender, KeyPressEventArgs e)
         {
             soloLetras(e);
         }
+
         public static void soloLetras(KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || char.IsControl(e.KeyChar))
@@ -143,5 +145,32 @@ namespace Smart
             }
         }
 
+        public void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noEsGuion(e);
+        }
+
+        public void txtContrasena_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noEsGuion(e);
+        }
+
+        public void txtConfirmacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noEsGuion(e);
+        }
+
+        //Verifica que en los "textbox" no se puedan ingresar ';' ni '-'
+        public static void noEsGuion(KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '-' || e.KeyChar == ';')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }      
     }
 }
