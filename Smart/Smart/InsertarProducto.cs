@@ -36,21 +36,11 @@ namespace Smart
 
                 if (result)
                 {
+                    MessageBox.Show("Producto almacenado correctamente, debe asociarle al menos una categoría", "Insertar Producto");
 
-                    DialogResult result2 = MessageBox.Show("¿Desea agregarle características a este producto en este momento?", "Clasificación del producto", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                    if (result2 == DialogResult.No)
-                    {
-                        MessageBox.Show("Producto almacenado correctamente", "Insertar Producto");
-                        MessageBox.Show("Si lo desea, en cualquier momento puede modificar el producto y agregarle características.", "Clasificación del producto");
-                        MenuAdmin admin = new MenuAdmin();
-                        admin.Show();
-                        this.Hide();
-                    }
-                    else if (result2 == DialogResult.Yes)
-                    {
-                        insCategoria agregar = new insCategoria();
-                        agregar.Show();
-                    }
+                    insCategoria agregar = new insCategoria();
+                    agregar.Show();
+                    
                 }
             }
             else

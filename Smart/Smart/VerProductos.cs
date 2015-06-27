@@ -37,38 +37,44 @@ namespace Smart
             }
             else if (cmbCriterio.Text == "Código Interno")
             {
-                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE CBinterno = '" + txtbusqueda.Text + "'";
+                consulta = "Select Producto.CBExterno, Producto.CBinterno, Producto.Fecha, Producto.Alto, Producto.Largo, Producto.Ancho, Producto.Volumen, Producto.Peso, Producto.Costo, Producto.Precio, Producto.Desc_Larga, Producto.Desc_Corta, Producto.Id_marca, Categoria.Descripción FROM Producto, Categoria, Asignado WHERE Producto.CBinterno = '" + txtbusqueda.Text + "' and Producto.CBExterno = Asignado.CBExterno_Producto and Asignado.ID_Categoria = Categoria.Id_cat";
       
             }
             else if (cmbCriterio.Text == "Costo")
             {
-                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE Costo = '" + int.Parse(txtbusqueda.Text) + "'";
+                consulta = "Select Producto.CBExterno, Producto.CBinterno, Producto.Fecha, Producto.Alto, Producto.Largo, Producto.Ancho, Producto.Volumen, Producto.Peso, Producto.Costo, Producto.Precio, Producto.Desc_Larga, Producto.Desc_Corta, Producto.Id_marca, Categoria.Descripción FROM Producto, Categoria, Asignado WHERE Producto.Costo = '" + int.Parse(txtbusqueda.Text) + "' and Producto.CBExterno = Asignado.CBExterno_Producto and Asignado.ID_Categoria = Categoria.Id_cat";
             }
             else if (cmbCriterio.Text == "Precio Actual")
             {
-                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE Precio = '" + int.Parse(txtbusqueda.Text) + "'";
+                consulta = "Select Producto.CBExterno, Producto.CBinterno, Producto.Fecha, Producto.Alto, Producto.Largo, Producto.Ancho, Producto.Volumen, Producto.Peso, Producto.Costo, Producto.Precio, Producto.Desc_Larga, Producto.Desc_Corta, Producto.Id_marca, Categoria.Descripción FROM Producto, Categoria, Asignado WHERE Producto.Precio = '" + int.Parse(txtbusqueda.Text) + "' and Producto.CBExterno = Asignado.CBExterno_Producto and Asignado.ID_Categoria = Categoria.Id_cat";
 
             }
             else if (cmbCriterio.Text == "Fecha de vencimiento")
             {
-                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE Fecha = '" + txtbusqueda.Text + "'";
+                consulta = "Select Producto.CBExterno, Producto.CBinterno, Producto.Fecha, Producto.Alto, Producto.Largo, Producto.Ancho, Producto.Volumen, Producto.Peso, Producto.Costo, Producto.Precio, Producto.Desc_Larga, Producto.Desc_Corta, Producto.Id_marca, Categoria.Descripción FROM Producto, Categoria, Asignado WHERE Producto.Fecha = '" + txtbusqueda.Text + "' and Producto.CBExterno = Asignado.CBExterno_Producto and Asignado.ID_Categoria = Categoria.Id_cat";
             }
             else if (cmbCriterio.Text == "Peso")
             {
-                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE Peso = '" + int.Parse(txtbusqueda.Text) + "'";
+                consulta = "Select Producto.CBExterno, Producto.CBinterno, Producto.Fecha, Producto.Alto, Producto.Largo, Producto.Ancho, Producto.Volumen, Producto.Peso, Producto.Costo, Producto.Precio, Producto.Desc_Larga, Producto.Desc_Corta, Producto.Id_marca, Categoria.Descripción FROM Producto, Categoria, Asignado WHERE Producto.Peso = '" + int.Parse(txtbusqueda.Text) + "' and Producto.CBExterno = Asignado.CBExterno_Producto and Asignado.ID_Categoria = Categoria.Id_cat";
             }
             else if (cmbCriterio.Text == "Medida de alto (cm)")
             {
-                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE Alto = '" + int.Parse(txtbusqueda.Text) + "'";
+                consulta = "Select Producto.CBExterno, Producto.CBinterno, Producto.Fecha, Producto.Alto, Producto.Largo, Producto.Ancho, Producto.Volumen, Producto.Peso, Producto.Costo, Producto.Precio, Producto.Desc_Larga, Producto.Desc_Corta, Producto.Id_marca, Categoria.Descripción FROM Producto, Categoria, Asignado WHERE Producto.Alto = '" + int.Parse(txtbusqueda.Text) + "' and Producto.CBExterno = Asignado.CBExterno_Producto and Asignado.ID_Categoria = Categoria.Id_cat";
             }
             else if (cmbCriterio.Text == "Medida de largo (cm)")
             {
-                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE Largo = '" + int.Parse(txtbusqueda.Text) + "'";
+                consulta = "Select Producto.CBExterno, Producto.CBinterno, Producto.Fecha, Producto.Alto, Producto.Largo, Producto.Ancho, Producto.Volumen, Producto.Peso, Producto.Costo, Producto.Precio, Producto.Desc_Larga, Producto.Desc_Corta, Producto.Id_marca, Categoria.Descripción FROM Producto, Categoria, Asignado WHERE Producto.Largo = '" + int.Parse(txtbusqueda.Text) + "' and Producto.CBExterno = Asignado.CBExterno_Producto and Asignado.ID_Categoria = Categoria.Id_cat";
+               
             }
             else if (cmbCriterio.Text == "Medida de ancho (cm)")
             {
-                consulta = "Select CBExterno, CBinterno, Fecha, Alto, Largo, Ancho, Volumen, Peso, Costo, Precio, Desc_Larga, Desc_Corta, Id_marca FROM Producto WHERE Ancho = '" + int.Parse(txtbusqueda.Text) + "'";
+                consulta = "Select Producto.CBExterno, Producto.CBinterno, Producto.Fecha, Producto.Alto, Producto.Largo, Producto.Ancho, Producto.Volumen, Producto.Peso, Producto.Costo, Producto.Precio, Producto.Desc_Larga, Producto.Desc_Corta, Producto.Id_marca, Categoria.Descripción FROM Producto, Categoria, Asignado WHERE Producto.Ancho = '" + int.Parse(txtbusqueda.Text) + "' and Producto.CBExterno = Asignado.CBExterno_Producto and Asignado.ID_Categoria = Categoria.Id_cat";
             }
+            else if (cmbCriterio.Text == "" || txtbusqueda.Text == "")
+            {
+                consulta = "Select Producto.CBExterno, Producto.CBinterno, Producto.Fecha, Producto.Alto, Producto.Largo, Producto.Ancho, Producto.Volumen, Producto.Peso, Producto.Costo, Producto.Precio, Producto.Desc_Larga, Producto.Desc_Corta, Producto.Id_marca, Categoria.Descripción FROM Producto, Categoria, Asignado WHERE Producto.CBExterno = Asignado.CBExterno_Producto and Asignado.ID_Categoria = Categoria.Id_cat";
+            }
+
             baseDatos.llenarTabla(consulta, displayProductos);
         }
     }

@@ -173,3 +173,4 @@ C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\S
 C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.Registrarse.resources
 C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerProductos.resources
 C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.csproj.GenerateResource.Cache
+C:\Users\B31003\Desktop\nuevo\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarCompra.resources
