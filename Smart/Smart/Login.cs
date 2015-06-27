@@ -65,8 +65,6 @@ namespace Smart
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
             permitirNumeros(e);
-            txtCedula.Text = "Ej: 000000000";
-            txtCedula.ForeColor = Color.Gray;
         }
 
 

@@ -206,6 +206,37 @@ namespace Smart
             {
                 e.Handled = false;
             }
-        }      
+        }
+
+        private void cmbTipoUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbTipoUsuario.SelectedIndex == 0) 
+            {
+                label10.Visible = false;
+                cmbSucursales.Visible = false;
+            }
+            else if (cmbTipoUsuario.SelectedIndex == 1)
+            {
+                label10.Visible = true;
+                cmbSucursales.Visible = true;  
+            }
+            else if (cmbTipoUsuario.SelectedIndex == 2)
+            {
+                label10.Visible = true;
+                cmbSucursales.Visible = true;                          
+            }
+            else 
+            {
+                label10.Visible = false;
+                cmbSucursales.Visible = false;
+            }
+        }
+
+        private void Registrarse_Load(object sender, EventArgs e)
+        {
+            string consulta = "Select Id_Sucursal from Sucursal";
+            baseDatos.cargaComboboxID(cmbSucursales, consulta);
+        }
+
     }
 }

@@ -208,9 +208,27 @@ namespace Smart
                     c1.Items.Add(datos.GetString(0));
                 }
 
-            }
-            
+            }            
         }
+
+
+        public void cargaComboboxID(ComboBox c1, string consulta)
+        {
+
+            SqlDataReader datos = null;
+            datos = ejecutarConsulta(consulta);
+
+            if (datos != null)
+            {
+                while (datos.Read())
+                {
+                    c1.Items.Add(datos.GetInt32(0));
+                }
+
+            }
+        }
+
+
 
         /*Método para actualizar un dataGrid*/
         public void llenarTabla(string consulta, DataGridView datagridView)
