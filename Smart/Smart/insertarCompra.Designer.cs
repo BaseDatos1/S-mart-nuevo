@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsertarCompra));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -69,7 +70,7 @@
             this.txtProducto.MaxLength = 30;
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.Size = new System.Drawing.Size(325, 22);
-            this.txtProducto.TabIndex = 18;
+            this.txtProducto.TabIndex = 4;
             // 
             // textBox2
             // 
@@ -78,7 +79,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(325, 22);
-            this.textBox2.TabIndex = 16;
+            this.textBox2.TabIndex = 3;
             // 
             // label3
             // 
@@ -160,7 +161,7 @@
             this.btnatras.Location = new System.Drawing.Point(12, 625);
             this.btnatras.Name = "btnatras";
             this.btnatras.Size = new System.Drawing.Size(64, 24);
-            this.btnatras.TabIndex = 9;
+            this.btnatras.TabIndex = 5;
             this.btnatras.Text = "Atrás";
             this.btnatras.UseVisualStyleBackColor = true;
             this.btnatras.Click += new System.EventHandler(this.btnatras_Click);
@@ -184,10 +185,11 @@
             this.Controls.Add(this.labelFecha);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "InsertarCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cliente";
+            this.Text = "Smart: Insertar Compra";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.displayProductos)).EndInit();

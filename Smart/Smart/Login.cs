@@ -65,6 +65,8 @@ namespace Smart
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
             permitirNumeros(e);
+            txtCedula.Text = "Ej: 000000000";
+            txtCedula.ForeColor = Color.Gray;
         }
 
 
@@ -91,6 +93,24 @@ namespace Smart
                 e.Handled = false;
             }
         }
+        
+        //CEDULA
+        private void txtCedula_Enter(object sender, EventArgs e)
+        {
+            if (txtCedula.Text == "Ej: 000000000")
+            {
+                txtCedula.Text = "";
+                txtCedula.ForeColor = Color.Black;
+            }
+        }
+        private void txtCedula_Leave(object sender, EventArgs e)
+        {
+            if (txtCedula.Text == "")
+            {
+                txtCedula.Text = "Ej: 000000000";
+                txtCedula.ForeColor = Color.Gray;
+            }
+        }        
 
     }
 }

@@ -77,5 +77,10 @@ namespace Smart
 
             baseDatos.llenarTabla(consulta, displayProductos);
         }
+
+        private void cmbCriterio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

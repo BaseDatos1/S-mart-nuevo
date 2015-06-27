@@ -79,6 +79,7 @@
             // txtbusqueda
             // 
             this.txtbusqueda.Location = new System.Drawing.Point(340, 28);
+            this.txtbusqueda.MaxLength = 30;
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.Size = new System.Drawing.Size(200, 22);
             this.txtbusqueda.TabIndex = 2;
@@ -100,6 +101,7 @@
             this.cmbCriterio.Name = "cmbCriterio";
             this.cmbCriterio.Size = new System.Drawing.Size(176, 24);
             this.cmbCriterio.TabIndex = 1;
+            this.cmbCriterio.SelectedIndexChanged += new System.EventHandler(this.cmbCriterio_SelectedIndexChanged);
             // 
             // label1
             // 

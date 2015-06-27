@@ -96,9 +96,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(20, 269);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 16);
+            this.label9.Size = new System.Drawing.Size(64, 16);
             this.label9.TabIndex = 17;
-            this.label9.Text = "Conforme:";
+            this.label9.Text = "Confirme:";
             // 
             // txtEmail
             // 
@@ -127,6 +127,7 @@
             this.txtTelefono.Size = new System.Drawing.Size(179, 22);
             this.txtTelefono.TabIndex = 5;
             this.txtTelefono.Enter += new System.EventHandler(this.txtTelefono_Enter);
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             this.txtTelefono.Leave += new System.EventHandler(this.txtTelefono_Leave);
             // 
             // label7

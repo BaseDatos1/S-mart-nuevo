@@ -113,6 +113,12 @@ namespace Smart
             }
         }
 
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(e);
+        } 
+
         public void txtNombre_KeyPress(object sender, KeyPressEventArgs e) 
         {
             soloLetras(e);

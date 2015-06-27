@@ -53,6 +53,7 @@
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(163, 22);
+            this.textBox1.MaxLength = 30;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(240, 22);
             this.textBox1.TabIndex = 1;
@@ -74,7 +75,7 @@
             this.comboBox1.Location = new System.Drawing.Point(163, 59);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(240, 24);
-            this.comboBox1.TabIndex = 3;
+            this.comboBox1.TabIndex = 2;
             // 
             // label3
             // 
@@ -95,7 +96,7 @@
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(240, 55);
-            this.textBox2.TabIndex = 5;
+            this.textBox2.TabIndex = 3;
             // 
             // btnAdmin
             // 
@@ -103,7 +104,7 @@
             this.btnAdmin.Location = new System.Drawing.Point(299, 173);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(104, 31);
-            this.btnAdmin.TabIndex = 15;
+            this.btnAdmin.TabIndex = 4;
             this.btnAdmin.Text = "Agregar";
             this.btnAdmin.UseVisualStyleBackColor = true;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);

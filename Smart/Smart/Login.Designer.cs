@@ -107,7 +107,9 @@
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(179, 22);
             this.txtCedula.TabIndex = 1;
+            this.txtCedula.Enter += new System.EventHandler(this.txtCedula_Enter);
             this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
+            this.txtCedula.Leave += new System.EventHandler(this.txtCedula_Leave);
             // 
             // label2
             // 
