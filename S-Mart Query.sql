@@ -1,7 +1,7 @@
 USE Supermercado_inteligente
 
 CREATE TABLE Categoria(
-	Id_cat int PRIMARY KEY, 
+	Id_cat int IDENTITY(1,1) PRIMARY KEY, 
 	Nombre varchar(30),
 	Descripción varchar(50)
 );
@@ -103,7 +103,7 @@ CREATE TABLE Compra(
 	Peso int check(Peso > 0),
 	Monto int check(Monto > 0),
 	Modo_Pago varchar(20) not null,
-	Cédula_Cliente varchar(15) not null default '0000000000' FOREIGN KEY REFERENCES Cliente(Cedula)
+	Cédula_Cliente varchar(15) default '0000000000' FOREIGN KEY REFERENCES Cliente(Cedula)
 	ON DELETE CASCADE,
 	Cédula_Cajero varchar(15) FOREIGN KEY REFERENCES Cajero(Cedula),
 	Id_Sucursal int FOREIGN KEY REFERENCES Sucursal(Id_Sucursal)
