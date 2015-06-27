@@ -101,7 +101,7 @@ namespace Smart
                     return true;
                      }
                     catch(SqlException ex){
-                        MessageBox.Show("El còdigo de barras externo ingresado ya existe en la base de datos S-mart", "Insertar producto");
+                        MessageBox.Show("El còdigo de barras externo ingresado ya existe en la base de datos S-mart o se ingresó una marca inválida", "Insertar producto");
                         return false;
                     }
 
