@@ -42,7 +42,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tipoUsuario = new System.Windows.Forms.ComboBox();
+            this.cmbTipoUsuario = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.txtContraseña = new System.Windows.Forms.TextBox();
@@ -67,7 +67,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.tipoUsuario);
+            this.groupBox1.Controls.Add(this.cmbTipoUsuario);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnAdmin);
             this.groupBox1.Controls.Add(this.txtContraseña);
@@ -195,17 +195,17 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Nombre:";
             // 
-            // tipoUsuario
+            // cmbTipoUsuario
             // 
-            this.tipoUsuario.FormattingEnabled = true;
-            this.tipoUsuario.Items.AddRange(new object[] {
+            this.cmbTipoUsuario.FormattingEnabled = true;
+            this.cmbTipoUsuario.Items.AddRange(new object[] {
             "Administrador",
             "Encargado de Inventario",
             "Cajero"});
-            this.tipoUsuario.Location = new System.Drawing.Point(126, 298);
-            this.tipoUsuario.Name = "tipoUsuario";
-            this.tipoUsuario.Size = new System.Drawing.Size(179, 24);
-            this.tipoUsuario.TabIndex = 9;
+            this.cmbTipoUsuario.Location = new System.Drawing.Point(126, 298);
+            this.cmbTipoUsuario.Name = "cmbTipoUsuario";
+            this.cmbTipoUsuario.Size = new System.Drawing.Size(179, 24);
+            this.cmbTipoUsuario.TabIndex = 9;
             // 
             // label3
             // 
@@ -300,7 +300,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox tipoUsuario;
+        private System.Windows.Forms.ComboBox cmbTipoUsuario;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.TextBox txtContraseña;

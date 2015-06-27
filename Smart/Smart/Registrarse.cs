@@ -12,9 +12,12 @@ namespace Smart
 {
     public partial class Registrarse : Form
     {
+        AccesoBaseDatos baseDatos;
+
         public Registrarse()
         {
             InitializeComponent();
+            baseDatos = new AccesoBaseDatos();
 
             txtCedula.Text = "Ej: 000000000";
             txtCedula.ForeColor = Color.Gray;
@@ -33,10 +36,42 @@ namespace Smart
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Usuario registrado con éxito en el sistema S-mart.", "Registrar usuario");
-            MenuAdmin admin = new MenuAdmin();
-            admin.Show();
-            this.Hide();
+
+            if (txtCedula.Text != "" && txtNombre.Text != "" && txtApellido1.Text != "" && txtApellido2.Text != "" && txtTelefono.Text != "" && txtEmail.Text != "" && txtContraseña.Text != "" && txtConfirmacion.Text != "" /* && TipoUsuario.Text != "" */ )
+            {
+
+                if (txtContraseña.Text != txtConfirmacion.Text)
+                {
+                    txtConfirmacion.Text = "";
+                    txtContraseña.Text = "";
+                    MessageBox.Show("Contraseña inválida. Inténtelo de nuevo", "Registrarse",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation,
+                    MessageBoxDefaultButton.Button1);
+                }
+                else
+                {
+                    string tipoDeUsuario = cmbTipoUsuario.Text;
+                    bool agregarPersona = baseDatos.insertarPersonaSQL(txtCedula.Text, txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtTelefono.Text, txtEmail.Text, txtContraseña.Text, txtConfirmacion.Text /*TipoUsuario.Text != "" */);
+                    //  bool agregar
+
+                    if (agregarPersona)
+                    {
+                        MessageBox.Show("El " + tipoDeUsuario + " registrado con éxito en el sistema S-mart.", "Registrar usuario");
+                        MenuAdmin admin = new MenuAdmin();
+                        admin.Show();
+                        this.Hide();
+
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar todos los datos correspondientes al registro del usuario", "Registrarse",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation,
+                MessageBoxDefaultButton.Button1);
+            }
         }
 
 

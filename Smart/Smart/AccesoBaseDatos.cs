@@ -110,6 +110,90 @@ namespace Smart
        
         }
 
+        /*Metodo para insertar un nuevo usuario en la base de datos*/
+        public bool insertarPersonaSQL(string CedulaPersona, string NombrePersona, string Apellido1Persona, string Apellido2Persona, string TelefonoPersona, string EmailPersona, string ContraseñaPersona, string ContraseñaConfirmacion /*string TipoUsuario */)
+        {
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("InsertarPersona", con))
+                {
+                    try
+                    {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add("@cedulaPersona", SqlDbType.VarChar).Value = CedulaPersona;
+                        cmd.Parameters.Add("@nombreP", SqlDbType.VarChar).Value = NombrePersona;
+                        cmd.Parameters.Add("@apellido1P", SqlDbType.VarChar).Value = Apellido1Persona;
+                        cmd.Parameters.Add("@apellido2P", SqlDbType.VarChar).Value = Apellido2Persona;
+                        cmd.Parameters.Add("@telefono", SqlDbType.VarChar).Value = TelefonoPersona;
+                        cmd.Parameters.Add("@emailP", SqlDbType.VarChar).Value = EmailPersona;
+                        cmd.Parameters.Add("@contraseñaP", SqlDbType.VarChar).Value = ContraseñaPersona;
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos", "Insertar Persona");
+                        return false;
+                    }
+
+                }
+            }
+
+        }
+
+
+        /*   public bool insertarUsuario(string CedulaPersona, int numeroSucursal, string tipoUsuario)
+           {
+               using (SqlConnection con = new SqlConnection(conexion))
+               {
+                   if (tipoUsuario == "Admininistrador")
+                   {
+                       string sql = "INSERT INTO Admin_Sucursal (Cedula) VALUES (@CedulaPersona)";
+                   }
+                   else if (tipoUsuario == "Cajero")
+                   {
+                       string sql = "INSERT INTO Cajero (Cedula) VALUES (@CedulaPersona, @numeroSucursal)";
+                   }
+                   else if (tipoUsuario == "Cliente")
+                   {
+                       string sql = "INSERT INTO Cliente (Cedula) VALUES (@CedulaPersona, @numeroSucursal)";
+                   }
+                   using (SqlCommand cmd = new SqlCommand("InsertarPersona", con))
+                   {
+                       try
+                       {
+
+                           cmd.CommandType = CommandType.StoredProcedure;
+
+                           cmd.Parameters.Add("@CedulaPersona", SqlDbType.VarChar).Value = CedulaPersona;
+                           cmd.Parameters.Add("@NombrePersona", SqlDbType.VarChar).Value = NombrePersona;
+                           cmd.Parameters.Add("@Apellido1Persona", SqlDbType.VarChar).Value = Apellido1Persona;
+                           cmd.Parameters.Add("@TelefonoPersona", SqlDbType.VarChar).Value = TelefonoPersona;
+                           cmd.Parameters.Add("@EmailPersona", SqlDbType.VarChar).Value = EmailPersona;
+                           cmd.Parameters.Add("@ContraseñaPersona", SqlDbType.VarChar).Value = ContraseñaPersona;
+
+                           con.Open();
+                           cmd.ExecuteNonQuery();
+                           return true;
+                       }
+                       catch (SqlException ex)
+                       {
+                           MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos", "Insertar Persona");
+                           return false;
+                       }
+
+                   }
+               }
+
+           } */
+
+
+
+
         /*Metodo para cargar un combobox*/
         public void cargaCombobox(ComboBox c1, string consulta)
         {
