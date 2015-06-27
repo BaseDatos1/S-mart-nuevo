@@ -154,3 +154,22 @@ C:\Users\B31003\Desktop\nuevo\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.Propertie
 C:\Users\B31003\Desktop\nuevo\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.Registrarse.resources
 C:\Users\B31003\Desktop\nuevo\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerProductos.resources
 C:\Users\B31003\Desktop\nuevo\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.csproj.GenerateResource.Cache
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\bin\Debug\Smart.exe.config
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.exe
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.pdb
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\bin\Debug\Smart.exe
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\bin\Debug\Smart.pdb
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.csprojResolveAssemblyReference.cache
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarCompra.resources
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarSucursal.resources
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.insCategoria.resources
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarProducto.resources
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.MenuAdmin.resources
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.Login.resources
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.MenuCajero.resources
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.MenuEncargado.resources
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.OpcIniciales.resources
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.Properties.Resources.resources
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.Registrarse.resources
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerProductos.resources
+C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.csproj.GenerateResource.Cache
