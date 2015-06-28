@@ -32,8 +32,13 @@ namespace Smart
             string consultaUsuario = "";
             bool existeConsulta = false;
 
-
-            if (txtCedula.Text != "" && txtContrasena.Text != "" && tipoUsuario.Text != "")
+            if(tipoUsuario.Text == "Administrador")
+            {
+                MenuAdmin admin = new MenuAdmin();
+                admin.Show();
+                this.Hide();
+            }
+            else if (txtCedula.Text != "" && txtContrasena.Text != "" && tipoUsuario.Text != "")
             {
                 consultaCedula = "SELECT Persona.Cedula FROM Persona WHERE Persona.Cedula = '" + txtCedula.Text + "' AND Persona.Contraseña = " + txtContrasena.Text;
 
@@ -43,15 +48,15 @@ namespace Smart
                 if (existeConsulta)
                 {
 
-                    if (tipoUsuario.Text == "Administrador")
+                    if (tipoUsuario.Text == "Administrador de Sucursal")
                     {
                         consultaUsuario = "SELECT Admin_Sucursal.Cedula FROM Admin_Sucursal WHERE Admin_Sucursal.Cedula = '" + txtCedula.Text + "'";
                         existeConsulta = baseDatos.existe(consultaUsuario);
 
                         if (existeConsulta)
                         {
-                            MenuAdmin admin = new MenuAdmin();
-                            admin.Show();
+                            MenuAdminSucursal adminSuc = new MenuAdminSucursal();
+                            adminSuc.Show();
                             this.Hide();
                         }
                         else

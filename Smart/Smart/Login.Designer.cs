@@ -63,6 +63,7 @@
             this.tipoUsuario.FormattingEnabled = true;
             this.tipoUsuario.Items.AddRange(new object[] {
             "Administrador",
+            "Administrador de Sucursal",
             "Encargado de Inventario",
             "Cajero"});
             this.tipoUsuario.Location = new System.Drawing.Point(128, 120);
