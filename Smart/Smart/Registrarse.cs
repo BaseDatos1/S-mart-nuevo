@@ -59,23 +59,58 @@ namespace Smart
 
                     if (agregarPersona)
                     {
-
-                        if (tipoDeUsuario != "Administrador")
+                        if (cmbSucursales.Text != "")
                         {
+                           
                             string sucursal = cmbSucursales.Text;
                             numSucursal = int.Parse(sucursal);
+                            agregarUsuario = baseDatos.insertarUsuario(txtCedula.Text, tipoDeUsuario, numSucursal);
                         }
 
-                        agregarUsuario = baseDatos.insertarUsuario(txtCedula.Text, tipoDeUsuario, numSucursal);
+                        else if (tipoDeUsuario == "Administrador Sucursal")
+                        {
+                            agregarUsuario = baseDatos.insertarUsuario(txtCedula.Text, tipoDeUsuario, numSucursal);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Debe ingresar un tipo de Usuario válido");
+                            //se debe borrar aqui el usuario porque no se insertó correctamente! 
+                        }
                     }
-
-
+                 
                     if (agregarPersona && agregarUsuario)
                     {
-                        MessageBox.Show("El usuario se ha registrado con éxito en el sistema S-mart.", "Registrar usuario");
-                        MenuAdmin admin = new MenuAdmin();
-                        admin.Show();
-                        this.Hide();
+                  
+                        if (tipoDeUsuario == "Administrador Sucursal")
+                        {
+                            baseDatos.obtenerSucursal("Select ID_Sucursal FROM Sucursal WHERE Cédula_AdminSucursal ='" + txtCedula.Text + "'");
+                            GlobalVar.CedulaUsuarioActual = txtCedula.Text;
+                            GlobalVar.TipoUsuarioSistema = tipoDeUsuario;
+                            MessageBox.Show("El usuario se ha registrado con éxito en el sistema S-mart.", "Registrar usuario");
+                            MenuAdminSucursal admin = new MenuAdminSucursal();
+                            admin.Show();
+                            this.Hide();
+                        }
+                        else if (tipoDeUsuario == "Encargado de Inventario")
+                        {
+                            baseDatos.obtenerSucursal("Select ID_Sucursal FROM Encargado_De_Inventario WHERE Cedula ='" + txtCedula.Text + "'");
+                            GlobalVar.CedulaUsuarioActual = txtCedula.Text;
+                            GlobalVar.TipoUsuarioSistema = tipoDeUsuario;
+                            MessageBox.Show("El usuario se ha registrado con éxito en el sistema S-mart.", "Registrar usuario");
+                            MenuEncargado encargadoInventario = new MenuEncargado();
+                            encargadoInventario.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            baseDatos.obtenerSucursal("Select ID_Sucursal FROM Cajero WHERE Cedula ='" + txtCedula.Text + "'");
+                            GlobalVar.CedulaUsuarioActual = txtCedula.Text;
+                            GlobalVar.TipoUsuarioSistema = tipoDeUsuario;
+                            MessageBox.Show("El usuario se ha registrado con éxito en el sistema S-mart.", "Registrar usuario");
+                            MenuCajero cajero = new MenuCajero();
+                            cajero.Show();
+                            this.Hide();
+                        }
 
                     }
                 }
@@ -249,8 +284,8 @@ namespace Smart
 
         private void Registrarse_Load(object sender, EventArgs e)
         {
-            //string consulta = "Select Id_Sucursal from Sucursal";
-            //baseDatos.cargaComboboxID(cmbSucursales, consulta);
+            string consulta = "Select Id_Sucursal from Sucursal";
+            baseDatos.cargaComboboxID(cmbSucursales, consulta);
         }
 
     }

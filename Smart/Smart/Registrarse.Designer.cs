@@ -222,7 +222,7 @@
             // 
             this.cmbTipoUsuario.FormattingEnabled = true;
             this.cmbTipoUsuario.Items.AddRange(new object[] {
-            "Administrador",
+            "Administrador Sucursal",
             "Encargado de Inventario",
             "Cajero"});
             this.cmbTipoUsuario.Location = new System.Drawing.Point(126, 316);

@@ -17,7 +17,7 @@ namespace Smart
     class AccesoBaseDatos
     {
         /*En Initial Catalog se agrega la base de datos propia. Intregated Security es para utilizar Windows Authentication*/
-        String conexion = "Data Source=10.1.4.59; Initial Catalog=Supermercado_inteligente; Integrated Security=SSPI";
+        String conexion = "Data Source=LARI-PC; Initial Catalog=Supermercado_inteligente; Integrated Security=SSPI";
        
         /*En data source siempre se cambia por el servidor local de la compu*/   
         /**
@@ -172,7 +172,7 @@ namespace Smart
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos", "Insertar Persona");
+                        MessageBox.Show("La cédula del usuario PERSONA ingresado ya existe en la base de datos", "Insertar Persona");
                         return false;
                     }
 
@@ -182,7 +182,7 @@ namespace Smart
         }
 
         /*Método para agregar tipo de Usuario en la base de datos */
-        public bool insertarUsuario(string CedulaPersona, string tipoUsuario, int numeroSucursal = 0)
+        public bool insertarUsuario(string CedulaPersona, string tipoUsuario, int numeroSucursal)
         {
             SqlConnection con = new SqlConnection(conexion);
             con.Open();
@@ -194,23 +194,25 @@ namespace Smart
             SqlParameter numSucursal = new SqlParameter("@ID_Sucursal", SqlDbType.Int, 4);
             numSucursal.Value = numeroSucursal;
 
-            if (tipoUsuario == "Administrador")
+            if (tipoUsuario == "Administrador Sucursal")
             {
-                string consulta = "INSERT INTO Admin_Sucursal (Cedula) VALUES (@Cedula)";
+                string consulta = "INSERT INTO Admin_Sucursal VALUES (@Cedula)";
+         
                 try
                 {
                     cmd = new SqlCommand(consulta, con);
 
 
                     cmd.Parameters.Add(Cedula);
-
+           
 
                     cmd.ExecuteNonQuery();
+       
+
                     return true;
                 }
                 catch (SqlException ex)
                 {
-                  //  string mensajeError = ex.ToString();
                     MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos S-mart");
                     return false;
                 }
@@ -218,8 +220,7 @@ namespace Smart
 
             else if (tipoUsuario == "Cajero")
             {
-                string consulta = "INSERT INTO Cajero (Cedula) VALUES (@CedulaPersona, @numeroSucursal)";
-                MessageBox.Show("Entre a Cajero");
+                string consulta = "INSERT INTO Cajero VALUES (@Cedula, @ID_Sucursal)";
                 try
                 {
                     cmd = new SqlCommand(consulta, con);
@@ -230,15 +231,14 @@ namespace Smart
                 }
                 catch (SqlException ex)
                 {
-                    //  string mensajeError = ex.ToString();
-                    MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos S-mart");
+                    MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos S-mart o la sucursal es inválida");
                     return false;
                 }
             }
 
             else if (tipoUsuario == "Encargado de Inventario")
             {
-                string consulta = "INSERT INTO Cliente (Cedula) VALUES (@CedulaPersona, @numeroSucursal)";
+                string consulta = "INSERT INTO Encargado_De_Inventario VALUES (@Cedula, @ID_Sucursal)";
                 try
                 {
                     cmd = new SqlCommand(consulta, con);
@@ -249,17 +249,17 @@ namespace Smart
                 }
                 catch (SqlException ex)
                 {
-                    // string mensajeError = ex.ToString();
-                    MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos S-mart");
+                    MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos S-mart o la sucursal es inválida");
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un tipo de usuario");
+                MessageBox.Show("Debe seleccionar un tipo de usuario válido");
                 return false;
             }
         }
+
 
 
         /*Método para ingresar una marca en la base de datos */
