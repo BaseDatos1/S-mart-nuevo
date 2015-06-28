@@ -174,3 +174,22 @@ C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\S
 C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerProductos.resources
 C:\Users\b35311\Documents\Repositorio Bases\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.csproj.GenerateResource.Cache
 C:\Users\B31003\Desktop\nuevo\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarCompra.resources
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\bin\Debug\Smart.exe.config
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.exe
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.pdb
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\bin\Debug\Smart.exe
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\bin\Debug\Smart.pdb
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.csprojResolveAssemblyReference.cache
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarCompra.resources
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarSucursal.resources
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.insCategoria.resources
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarProducto.resources
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.MenuAdmin.resources
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.Login.resources
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.MenuCajero.resources
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.MenuEncargado.resources
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.OpcIniciales.resources
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.Properties.Resources.resources
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.Registrarse.resources
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerProductos.resources
+E:\UCR\2015 I Ciclo\Bases de datos I\Proyecto\Implementación del proyecto\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.csproj.GenerateResource.Cache

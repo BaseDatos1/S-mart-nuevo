@@ -160,6 +160,27 @@ namespace Smart
             }
         }
 
+        public void insertarDatos(String consulta)
+        {
+            SqlConnection sqlConnection = new SqlConnection(conexion);
+
+            try
+            {
+                sqlConnection.Open();
+
+                SqlCommand cons = new SqlCommand(consulta, sqlConnection);
+
+                cons.ExecuteNonQuery();
+
+                sqlConnection.Close();
+            }
+
+            catch (SqlException ex)
+            { 
+            }
+
+        }
+
         /*   public bool insertarUsuario(string CedulaPersona, int numeroSucursal, string tipoUsuario)
            {
                using (SqlConnection con = new SqlConnection(conexion))

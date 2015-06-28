@@ -23,7 +23,9 @@ namespace Smart
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-
+            string consulta = "INSERT INTO Asignado VALUES ((Select Id_Cat FROM Categoria WHERE Nombre = '"+ cmbCategorias.Text + "' and Descripción = '" + txtdescripcion.Text + "'), '"+ txtCodigoExterno.Text +"')";
+            baseDatos.insertarDatos(consulta);
+            MessageBox.Show("Producto asignado con su característica correctamente, si lo desea puede agregar más categorías", "Agregar características al producto");
             ControlBox = true;
         }
 
