@@ -44,10 +44,11 @@ namespace Smart
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Selección de datos incorrectos", "Selección de datos",
-     MessageBoxButtons.OK,
-     MessageBoxIcon.Exclamation,
-     MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Selección de datos incorrectos"
+                    , "Selección de datos"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Exclamation
+                    , MessageBoxDefaultButton.Button1);
             }
             return datos;
         }
@@ -80,33 +81,34 @@ namespace Smart
             {
                 using (SqlCommand cmd = new SqlCommand("InsertarProducto", con))
                 {
-                    try{
-               
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("@codigoExterno", SqlDbType.VarChar).Value = externo;
-                    cmd.Parameters.Add("@codigoInterno", SqlDbType.VarChar).Value = interno;
-                    cmd.Parameters.Add("@fechaVenc", SqlDbType.DateTime).Value = fecha;
-                    cmd.Parameters.Add("@alto", SqlDbType.Int).Value = alto;
-                    cmd.Parameters.Add("@largo", SqlDbType.Int).Value = largo;
-                    cmd.Parameters.Add("@ancho", SqlDbType.Int).Value = ancho;
-                    cmd.Parameters.Add("@volumen", SqlDbType.Int).Value = volumen;
-                    cmd.Parameters.Add("@peso", SqlDbType.Float).Value = peso;
-                    cmd.Parameters.Add("@costo", SqlDbType.Int).Value = costo;
-                    cmd.Parameters.Add("@precio", SqlDbType.Int).Value = precio;
-                    cmd.Parameters.Add("@desLarga", SqlDbType.VarChar).Value = descLarga;
-                    cmd.Parameters.Add("@descCorta", SqlDbType.VarChar).Value = descCorta;
-                    cmd.Parameters.Add("@marca", SqlDbType.VarChar).Value = marca;
+                    try{  
+                        cmd.CommandType = CommandType.StoredProcedure;
+                   
+                        cmd.Parameters.Add("@codigoExterno", SqlDbType.VarChar).Value = externo;                  
+                        cmd.Parameters.Add("@codigoInterno", SqlDbType.VarChar).Value = interno;                   
+                        cmd.Parameters.Add("@fechaVenc", SqlDbType.DateTime).Value = fecha;                   
+                        cmd.Parameters.Add("@alto", SqlDbType.Int).Value = alto;                   
+                        cmd.Parameters.Add("@largo", SqlDbType.Int).Value = largo;                   
+                        cmd.Parameters.Add("@ancho", SqlDbType.Int).Value = ancho;                   
+                        cmd.Parameters.Add("@volumen", SqlDbType.Int).Value = volumen;                   
+                        cmd.Parameters.Add("@peso", SqlDbType.Float).Value = peso;                  
+                        cmd.Parameters.Add("@costo", SqlDbType.Int).Value = costo;                  
+                        cmd.Parameters.Add("@precio", SqlDbType.Int).Value = precio;                  
+                        cmd.Parameters.Add("@desLarga", SqlDbType.VarChar).Value = descLarga;                   
+                        cmd.Parameters.Add("@descCorta", SqlDbType.VarChar).Value = descCorta;                   
+                        cmd.Parameters.Add("@marca", SqlDbType.VarChar).Value = marca;
 
                     con.Open();
                     cmd.ExecuteNonQuery();
                     return true;
                      }
                     catch(SqlException ex){
-                        MessageBox.Show("El código de barras externo ingresado ya existe en la base de datos S-mart o se ingresó algún dato inválido", "Insertar Producto",
-                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation,
-                         MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("El código de barras externo ingresado ya existe en la base de datos S-mart o se ingresó algún dato inválido"
+                            , "Insertar Producto"
+                            , MessageBoxButtons.OK
+                            , MessageBoxIcon.Exclamation
+                            , MessageBoxDefaultButton.Button1);
+
                         return false;
                     }
                 }
@@ -123,7 +125,6 @@ namespace Smart
                 {
                     try
                     {
-
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         cmd.Parameters.Add("@cedulaPersona", SqlDbType.VarChar).Value = CedulaPersona;
@@ -140,10 +141,12 @@ namespace Smart
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos S-mart", "Insertar Usuario",
-      MessageBoxButtons.OK,
-      MessageBoxIcon.Exclamation,
-      MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos S-mart"
+                            , "Insertar Usuario"
+                            , MessageBoxButtons.OK
+                            , MessageBoxIcon.Exclamation
+                            , MessageBoxDefaultButton.Button1);
+
                         return false;
                     }
                 }
@@ -180,10 +183,12 @@ namespace Smart
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Los datos ingresados ya se encuentran en la base de datos S-mart", "Inserción de datos",
-      MessageBoxButtons.OK,
-      MessageBoxIcon.Exclamation,
-      MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Los datos ingresados ya se encuentran en la base de datos S-mart"
+                    , "Inserción de datos"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Exclamation
+                    , MessageBoxDefaultButton.Button1);
+
                 return false;
             }
         }
@@ -273,25 +278,22 @@ namespace Smart
 
         /*Metodo para cargar un combobox*/
         public void cargaCombobox(ComboBox c1, string consulta)
-        {
-          
+        {          
             SqlDataReader datos = null;
             datos = ejecutarConsulta(consulta);
-           
-                if(datos != null)
-                {
+            
+            if(datos != null)
+            {
                 while (datos.Read())
                 {
                     c1.Items.Add(datos.GetString(0));
                 }
-
             }            
         }
 
 
         public void cargaComboboxID(ComboBox c1, string consulta)
         {
-
             SqlDataReader datos = null;
             datos = ejecutarConsulta(consulta);
 
@@ -301,11 +303,8 @@ namespace Smart
                 {
                     c1.Items.Add(datos.GetInt32(0));
                 }
-
             }
         }
-
-
 
         /*Método para actualizar un dataGrid*/
         public void llenarTabla(string consulta, DataGridView datagridView)
@@ -320,8 +319,7 @@ namespace Smart
                 datagridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
                 datagridView.DataSource = bindingSource;
                 for (int i = 0; i < datagridView.ColumnCount; i++)
-                {
-                    
+                {                    
                     datagridView.Columns[i].Width = 150;
                 }
             }
@@ -331,6 +329,5 @@ namespace Smart
                 MessageBox.Show(mensajeError);
             }
         }
-
     }
 }
