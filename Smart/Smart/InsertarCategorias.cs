@@ -24,8 +24,13 @@ namespace Smart
         {
             if (txtNombre.Text != "" && txtdescripcion.Text != "")
             {
-                string consulta = "INSERT INTO Categoria VALUES ('" + txtNombre.Text + "', '" + txtdescripcion.Text + "'";
-                baseDatos.insertarDatos(consulta);
+                string consulta = "INSERT INTO Categoria (Nombre, Descripción) VALUES ('" + txtNombre.Text + "', '" + txtdescripcion.Text + "')";
+                bool result = baseDatos.insertarDatos(consulta);
+                if (result)
+                {
+                    MessageBox.Show("Característica para asignar a productos almacenada correctamente", "Insertar Producto");
+                }
+
             }
         }
     }

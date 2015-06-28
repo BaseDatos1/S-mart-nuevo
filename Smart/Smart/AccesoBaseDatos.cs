@@ -44,8 +44,10 @@ namespace Smart
             }
             catch (SqlException ex)
             {
-                string mensajeError = ex.ToString();
-                MessageBox.Show(mensajeError);
+                MessageBox.Show("Selección de datos incorrectos", "Selección de datos",
+     MessageBoxButtons.OK,
+     MessageBoxIcon.Exclamation,
+     MessageBoxDefaultButton.Button1);
             }
             return datos;
         }
@@ -101,7 +103,10 @@ namespace Smart
                     return true;
                      }
                     catch(SqlException ex){
-                        MessageBox.Show("El còdigo de barras externo ingresado ya existe en la base de datos S-mart o se ingresó una marca inválida", "Insertar producto");
+                        MessageBox.Show("El código de barras externo ingresado ya existe en la base de datos S-mart o se ingresó algún dato inválido", "Insertar Producto",
+      MessageBoxButtons.OK,
+      MessageBoxIcon.Exclamation,
+      MessageBoxDefaultButton.Button1);
                         return false;
                     }
 
@@ -136,7 +141,10 @@ namespace Smart
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos S-mart", "Insertar Persona");
+                        MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos S-mart", "Insertar Usuario",
+      MessageBoxButtons.OK,
+      MessageBoxIcon.Exclamation,
+      MessageBoxDefaultButton.Button1);
                         return false;
                     }
 
@@ -160,27 +168,31 @@ namespace Smart
             }
         }
 
-        public void insertarDatos(String consulta)
+        public bool insertarDatos(String consulta)
         {
             SqlConnection sqlConnection = new SqlConnection(conexion);
 
+            sqlConnection.Open();
             try
             {
-                sqlConnection.Open();
-
                 SqlCommand cons = new SqlCommand(consulta, sqlConnection);
 
                 cons.ExecuteNonQuery();
 
                 sqlConnection.Close();
+                return true;
             }
-
             catch (SqlException ex)
             {
-                MessageBox.Show("Los datos ingresados ya existe en la base de datos S-mart", "Inserción de datos");
+                MessageBox.Show("Los datos ingresados ya se encuentran en la base de datos S-mart", "Inserción de datos",
+      MessageBoxButtons.OK,
+      MessageBoxIcon.Exclamation,
+      MessageBoxDefaultButton.Button1);
+                return false;
             }
-
         }
+
+        
 
         /*   public bool insertarUsuario(string CedulaPersona, int numeroSucursal, string tipoUsuario)
            {

@@ -69,7 +69,6 @@ namespace Smart
         {
             InsertarCategorias categorias = new InsertarCategorias();
             categorias.Show();
-            this.Hide();
         }
 
     }
