@@ -93,7 +93,7 @@
             this.txtdescripcion.Enabled = false;
             this.txtdescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdescripcion.Location = new System.Drawing.Point(163, 95);
-            this.txtdescripcion.MaxLength = 55;
+            this.txtdescripcion.MaxLength = 50;
             this.txtdescripcion.Multiline = true;
             this.txtdescripcion.Name = "txtdescripcion";
             this.txtdescripcion.Size = new System.Drawing.Size(240, 55);

@@ -42,12 +42,16 @@
             this.labelHora = new System.Windows.Forms.Label();
             this.btnatras = new System.Windows.Forms.Button();
             this.displayProductos = new System.Windows.Forms.DataGridView();
+            this.txtMonto = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.displayProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtMonto);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtProducto);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label3);
@@ -57,20 +61,20 @@
             this.groupBox1.Controls.Add(this.labelCliente);
             this.groupBox1.Controls.Add(this.labelCajero);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(164, 14);
+            this.groupBox1.Location = new System.Drawing.Point(164, 20);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(447, 166);
+            this.groupBox1.Size = new System.Drawing.Size(447, 199);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos del producto";
+            this.groupBox1.Text = "Datos de la compra";
             // 
             // txtProducto
             // 
-            this.txtProducto.Location = new System.Drawing.Point(102, 130);
+            this.txtProducto.Location = new System.Drawing.Point(102, 159);
             this.txtProducto.MaxLength = 30;
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.Size = new System.Drawing.Size(325, 22);
-            this.txtProducto.TabIndex = 4;
+            this.txtProducto.TabIndex = 5;
             // 
             // textBox2
             // 
@@ -84,11 +88,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 133);
+            this.label3.Location = new System.Drawing.Point(18, 162);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 16);
+            this.label3.Size = new System.Drawing.Size(65, 16);
             this.label3.TabIndex = 17;
-            this.label3.Text = "Producto";
+            this.label3.Text = "Producto:";
             // 
             // labelID
             // 
@@ -122,9 +126,9 @@
             this.labelCliente.AutoSize = true;
             this.labelCliente.Location = new System.Drawing.Point(18, 63);
             this.labelCliente.Name = "labelCliente";
-            this.labelCliente.Size = new System.Drawing.Size(49, 16);
+            this.labelCliente.Size = new System.Drawing.Size(52, 16);
             this.labelCliente.TabIndex = 1;
-            this.labelCliente.Text = "Cliente";
+            this.labelCliente.Text = "Cliente:";
             // 
             // labelCajero
             // 
@@ -169,15 +173,34 @@
             // displayProductos
             // 
             this.displayProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.displayProductos.Location = new System.Drawing.Point(59, 202);
+            this.displayProductos.Location = new System.Drawing.Point(59, 247);
             this.displayProductos.Name = "displayProductos";
-            this.displayProductos.Size = new System.Drawing.Size(663, 402);
+            this.displayProductos.Size = new System.Drawing.Size(663, 357);
             this.displayProductos.TabIndex = 20;
+            // 
+            // txtMonto
+            // 
+            this.txtMonto.Location = new System.Drawing.Point(102, 127);
+            this.txtMonto.MaxLength = 30;
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.ReadOnly = true;
+            this.txtMonto.Size = new System.Drawing.Size(325, 22);
+            this.txtMonto.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 130);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 16);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Monto Total:";
             // 
             // InsertarCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(784, 661);
             this.Controls.Add(this.displayProductos);
             this.Controls.Add(this.btnatras);
@@ -213,5 +236,7 @@
         private System.Windows.Forms.Label labelHora;
         private System.Windows.Forms.Button btnatras;
         private System.Windows.Forms.DataGridView displayProductos;
+        private System.Windows.Forms.TextBox txtMonto;
+        private System.Windows.Forms.Label label1;
     }
 }

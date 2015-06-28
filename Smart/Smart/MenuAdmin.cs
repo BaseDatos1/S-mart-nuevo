@@ -65,5 +65,12 @@ namespace Smart
             this.Hide();
         }
 
+        private void categoríaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertarCategorias categorias = new InsertarCategorias();
+            categorias.Show();
+            this.Hide();
+        }
+
     }
 }

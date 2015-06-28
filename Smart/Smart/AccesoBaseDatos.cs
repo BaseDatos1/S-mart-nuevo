@@ -136,7 +136,7 @@ namespace Smart
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos", "Insertar Persona");
+                        MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos S-mart", "Insertar Persona");
                         return false;
                     }
 
@@ -176,7 +176,8 @@ namespace Smart
             }
 
             catch (SqlException ex)
-            { 
+            {
+                MessageBox.Show("Los datos ingresados ya existe en la base de datos S-mart", "Inserción de datos");
             }
 
         }
