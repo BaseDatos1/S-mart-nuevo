@@ -25,7 +25,7 @@ CREATE TABLE Producto(
 	Precio int check(Precio > 0), 
 	Desc_Larga varchar(100),
 	Desc_Corta varchar(30),
-	Id_marca varchar(20) FOREIGN KEY REFERENCES Marca(Nombre_marca)
+	Id_marca varchar(20) FOREIGN KEY REFERENCES Marca(Nombre_marca) ON DELETE NO ACTION
 );
 
 CREATE TABLE Persona(
@@ -159,7 +159,7 @@ CREATE TABLE Vende(
 
 CREATE TABLE Asignado(
 
-	ID_Categoria int FOREIGN KEY REFERENCES Categoria(Id_cat),
+	ID_Categoria int FOREIGN KEY REFERENCES Categoria(Id_cat) ON DELETE NO ACTION,
 	CBExterno_Producto varchar(30) FOREIGN KEY REFERENCES Producto(CBExterno)
 	ON DELETE NO ACTION,
 
