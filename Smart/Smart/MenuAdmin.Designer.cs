@@ -53,13 +53,13 @@
             this.compraToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sucursalToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.marcaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.categoríaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.productoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.compraToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.marcaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -256,12 +256,6 @@
             this.sucursalToolStripMenuItem2.Size = new System.Drawing.Size(154, 22);
             this.sucursalToolStripMenuItem2.Text = "Sucursal";
             // 
-            // marcaToolStripMenuItem2
-            // 
-            this.marcaToolStripMenuItem2.Name = "marcaToolStripMenuItem2";
-            this.marcaToolStripMenuItem2.Size = new System.Drawing.Size(154, 22);
-            this.marcaToolStripMenuItem2.Text = "Marca";
-            // 
             // categoríaToolStripMenuItem2
             // 
             this.categoríaToolStripMenuItem2.Name = "categoríaToolStripMenuItem2";
@@ -299,6 +293,12 @@
             this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            // 
+            // marcaToolStripMenuItem2
+            // 
+            this.marcaToolStripMenuItem2.Name = "marcaToolStripMenuItem2";
+            this.marcaToolStripMenuItem2.Size = new System.Drawing.Size(154, 22);
+            this.marcaToolStripMenuItem2.Text = "Marca";
             // 
             // MenuAdmin
             // 
@@ -338,7 +338,6 @@
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sucursalToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem marcaToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem categoríaToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
@@ -355,5 +354,6 @@
         private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compraToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem compraToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem marcaToolStripMenuItem2;
     }
 }
