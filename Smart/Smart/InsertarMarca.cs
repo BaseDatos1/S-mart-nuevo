@@ -35,9 +35,6 @@ namespace Smart
                 if (agregarMarca)
                 {
                     MessageBox.Show("Se ha ingresado correctamente la marca en el sistema S-mart.", "Insertar Marca");
-                    MenuAdmin admin = new MenuAdmin();
-                    admin.Show();
-                    this.Hide();
                 }
 
             }

@@ -78,5 +78,13 @@ namespace Smart
             this.Hide();
         }
 
+        private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertarMarca cat = new InsertarMarca();
+            cat.Show();
+        }
+
+    
+
     }
 }

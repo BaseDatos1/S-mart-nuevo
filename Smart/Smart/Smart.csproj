@@ -45,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoBaseDatos.cs" />
+    <Compile Include="InsertarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertarMarca.Designer.cs">
+      <DependentUpon>InsertarMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuAdminSucursal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     <Compile Include="VerProductos.Designer.cs">
       <DependentUpon>VerProductos.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="InsertarMarca.resx">
+      <DependentUpon>InsertarMarca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuAdminSucursal.resx">
       <DependentUpon>MenuAdminSucursal.cs</DependentUpon>
     </EmbeddedResource>
