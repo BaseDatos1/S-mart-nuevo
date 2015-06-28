@@ -419,6 +419,33 @@ namespace Smart
             }
         }
 
+        /*Método para verificar existencia de dato en una consulta */
+        public bool existe(string consulta)
+        {
+
+            SqlDataReader datos = null;
+            datos = ejecutarConsulta(consulta);
+
+            if (datos != null)
+            {
+                if (datos.Read())
+                {
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         /*Método para actualizar un dataGrid*/
         public void llenarTabla(string consulta, DataGridView datagridView)
         {

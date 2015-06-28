@@ -12,9 +12,11 @@ namespace Smart
 {
     public partial class Login : Form
     {
+        AccesoBaseDatos baseDatos;
         public Login()
         {
             InitializeComponent();
+            baseDatos = new AccesoBaseDatos();
         }
 
         private void btnatras_Click(object sender, EventArgs e)
@@ -26,40 +28,107 @@ namespace Smart
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
+            string consultaCedula = "";
+            string consultaUsuario = "";
+            bool existeConsulta = false;
+
+
             if (txtCedula.Text != "" && txtContrasena.Text != "" && tipoUsuario.Text != "")
             {
-                if (tipoUsuario.Text == "Administrador")
+                consultaCedula = "SELECT Persona.Cedula FROM Persona WHERE Persona.Cedula = '" + txtCedula.Text + "' AND Persona.Contraseña = " + txtContrasena.Text;
+
+                existeConsulta = baseDatos.existe(consultaCedula);
+
+
+                if (existeConsulta)
                 {
-                    MenuAdmin admin = new MenuAdmin();
-                    admin.Show();
-                    this.Hide();
-                }
-                else if (tipoUsuario.Text == "Encargado de Inventario")
-                {
-                    MenuEncargado encargado = new MenuEncargado();
-                    encargado.Show();
-                    this.Hide();
-                }
-                else if (tipoUsuario.Text == "Cajero")
-                {
-                    MenuCajero cajero = new MenuCajero();
-                    cajero.Show();
-                    this.Hide();
+
+                    if (tipoUsuario.Text == "Administrador")
+                    {
+                        consultaUsuario = "SELECT Admin_Sucursal.Cedula FROM Admin_Sucursal WHERE Admin_Sucursal.Cedula = '" + txtCedula.Text + "'";
+                        existeConsulta = baseDatos.existe(consultaUsuario);
+
+                        if (existeConsulta)
+                        {
+                            MenuAdmin admin = new MenuAdmin();
+                            admin.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El usuario ingresado no se ha registrado en en el sistema S-mart.", "Login",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation,
+                            MessageBoxDefaultButton.Button1);
+                        }
+                    }
+                    else if (tipoUsuario.Text == "Encargado de Inventario")
+                    {
+                        MessageBox.Show("Entr a encarg. de inventario");
+                        consultaUsuario = "SELECT Encargado_De_Inventario.Cedula FROM Encargado_De_Inventario WHERE Encargado_De_Inventario.Cedula ='" + txtCedula.Text + "'";
+                        existeConsulta = baseDatos.existe(consultaUsuario);
+
+                        if (existeConsulta)
+                        {
+                            MenuEncargado encargado = new MenuEncargado();
+                            encargado.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El usuario ingresado no se ha registrado en en el sistema S-mart.", "Login",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation,
+                            MessageBoxDefaultButton.Button1);
+                        }
+                    }
+                    else if (tipoUsuario.Text == "Cajero")
+                    {
+                        consultaUsuario = "SELECT Cajero.Cedula FROM Cajero WHERE Cajero.Cedula = '" + txtCedula.Text + "'";
+                        existeConsulta = baseDatos.existe(consultaUsuario);
+
+                        if (existeConsulta)
+                        {
+                            MenuCajero cajero = new MenuCajero();
+                            cajero.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El usuario ingresado no se ha registrado en en el sistema S-mart.", "Login",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation,
+                            MessageBoxDefaultButton.Button1);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe ingresar el tipo de usuario que le corresponde.", "Iniciar sesión",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation,
+                        MessageBoxDefaultButton.Button1);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Se ingresó un tipo de usuario no válido", "Iniciar sesión",
-       MessageBoxButtons.OK,
-       MessageBoxIcon.Exclamation,
-       MessageBoxDefaultButton.Button1);
+                    txtCedula.Text = "";
+                    txtContrasena.Text = "";
+                    tipoUsuario.Text = "";
+
+                    MessageBox.Show("Los datos ingresados son inválidos.", "Iniciar sesión",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation,
+                    MessageBoxDefaultButton.Button1);
                 }
             }
-            else {
+            else
+            {
                 MessageBox.Show("Debe ingresar todos los datos correspondientes al usuario", "Iniciar sesión",
-       MessageBoxButtons.OK,
-       MessageBoxIcon.Exclamation,
-       MessageBoxDefaultButton.Button1);
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation,
+                MessageBoxDefaultButton.Button1);
             }
+                         
         }
 
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
