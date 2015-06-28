@@ -97,7 +97,7 @@ CREATE TABLE Cajero(
 
 
 CREATE TABLE Compra(
-	Id_compra int PRIMARY KEY,
+	Id_compra int IDENTITY(1,1) PRIMARY KEY,
 	Num_caja int check(Num_caja > 0),
 	Fecha datetime,
 	Peso int check(Peso > 0),

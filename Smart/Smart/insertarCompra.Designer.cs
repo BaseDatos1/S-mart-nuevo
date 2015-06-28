@@ -162,7 +162,7 @@
             // 
             this.labelFecha.AutoSize = true;
             this.labelFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.labelFecha.Location = new System.Drawing.Point(648, 20);
+            this.labelFecha.Location = new System.Drawing.Point(648, 29);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(72, 16);
             this.labelFecha.TabIndex = 2;
@@ -172,7 +172,7 @@
             // 
             this.labelHora.AutoSize = true;
             this.labelHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.labelHora.Location = new System.Drawing.Point(726, 20);
+            this.labelHora.Location = new System.Drawing.Point(720, 29);
             this.labelHora.Name = "labelHora";
             this.labelHora.Size = new System.Drawing.Size(39, 16);
             this.labelHora.TabIndex = 3;
