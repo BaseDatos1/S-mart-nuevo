@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace Smart
 {
@@ -49,6 +50,23 @@ namespace Smart
                     MessageBoxIcon.Exclamation,
                     MessageBoxDefaultButton.Button1);
                 }
+                else if(txtEmail.Text != "")
+                {                    
+                    try
+                    {
+                        var test = new MailAddress(txtEmail.Text);
+                    }
+                    catch (FormatException ex)
+                    {
+                        txtEmail.Text = "";
+                        // wrong format for email
+                        MessageBox.Show("Formato de email incorrecto. Inténtelo de nuevo. \nEj: persona@email.com"
+                            , "Registrarse"
+                            , MessageBoxButtons.OK
+                            , MessageBoxIcon.Exclamation
+                            , MessageBoxDefaultButton.Button1);
+                    }
+                }
                 else
                 {
                     string tipoDeUsuario = cmbTipoUsuario.Text;
@@ -61,7 +79,6 @@ namespace Smart
                         MenuAdmin admin = new MenuAdmin();
                         admin.Show();
                         this.Hide();
-
                     }
                 }
             }
@@ -76,7 +93,7 @@ namespace Smart
 
 
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        {         
             soloNumeros(e);
         }        
 
@@ -136,7 +153,7 @@ namespace Smart
             {
                 txtEmail.Text = "";
                 txtEmail.ForeColor = Color.Black;
-            }
+            }                   
         }
 
         private void txtEmail_Leave(object sender, EventArgs e)
@@ -145,7 +162,7 @@ namespace Smart
             {
                 txtEmail.Text = "Ej: persona@email.com";
                 txtEmail.ForeColor = Color.Gray;
-            }
+            }                      
         }
         
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
