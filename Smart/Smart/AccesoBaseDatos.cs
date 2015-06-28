@@ -104,12 +104,11 @@ namespace Smart
                      }
                     catch(SqlException ex){
                         MessageBox.Show("El código de barras externo ingresado ya existe en la base de datos S-mart o se ingresó algún dato inválido", "Insertar Producto",
-      MessageBoxButtons.OK,
-      MessageBoxIcon.Exclamation,
-      MessageBoxDefaultButton.Button1);
+                         MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation,
+                         MessageBoxDefaultButton.Button1);
                         return false;
                     }
-
                 }
             }
        
@@ -147,10 +146,8 @@ namespace Smart
       MessageBoxDefaultButton.Button1);
                         return false;
                     }
-
                 }
             }
-
         }
 
         public void cargarTexto(string consulta, TextBox txt)
@@ -164,7 +161,6 @@ namespace Smart
                 {
                     txt.Text = datos.GetString(0);
                 }
-
             }
         }
 
@@ -240,6 +236,39 @@ namespace Smart
            } */
 
 
+        public bool insertarSurcursalSQL(int IDSucursal, string NombreSucursal, string Coordenadas, string Direccion, string CedulaAdmin)
+        {
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("InsertarSucursal", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add("@ID_Sucursal", SqlDbType.Int).Value = IDSucursal;
+                        cmd.Parameters.Add("@Nombre_Sucursal", SqlDbType.VarChar).Value = NombreSucursal;
+                        cmd.Parameters.Add("@Coordenadas", SqlDbType.VarChar).Value = Coordenadas;
+                        cmd.Parameters.Add("@Direccion", SqlDbType.VarChar).Value = Direccion;
+                        cmd.Parameters.Add("@Cedula_AdminSucursal", SqlDbType.VarChar).Value = CedulaAdmin;
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("El ID de la sucursal ingresada ya existe en la base de datos S-mart"
+                        , "Insertar Sucursal"
+                        , MessageBoxButtons.OK
+                        , MessageBoxIcon.Exclamation
+                        , MessageBoxDefaultButton.Button1);
+
+                        return false;
+                    }
+                }
+            }
+        }
 
 
         /*Metodo para cargar un combobox*/

@@ -12,15 +12,17 @@ namespace Smart
 {
     public partial class InsertarSucursal : Form
     {
+        AccesoBaseDatos baseDatos;
+
         public InsertarSucursal()
         {
             InitializeComponent();
+            baseDatos = new AccesoBaseDatos();
 
-            textBox1.Text = "Ej: 4512";
-            textBox1.ForeColor = Color.Gray;
-            textBox5.Text = "Ej: 000000000";
-            textBox5.ForeColor = Color.Gray;
-
+            txtIDSucursal.Text = "Ej: 4512";
+            txtIDSucursal.ForeColor = Color.Gray;
+            txtCedulaAdmin.Text = "Ej: 000000000";
+            txtCedulaAdmin.ForeColor = Color.Gray;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -38,11 +40,30 @@ namespace Smart
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+            if (txtIDSucursal.Text != "" && txtNombreSucursal.Text != "" && txtDireccion.Text != "" && txtCedulaAdmin.Text != "")
+            {
+                int ID = int.Parse(txtIDSucursal.Text);
+                
+                bool result = baseDatos.insertarSurcursalSQL(ID, txtNombreSucursal.Text, txtCoordenadas.Text, txtDireccion.Text, txtCedulaAdmin.Text);                
+              
+                if (result)
+                {
+                    MessageBox.Show("Sucursal almacenada correctamente", "Insertar Sucursal");                   
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar todos los datos correspondientes al producto"
+                    , "Insertar Producto"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Exclamation
+                    , MessageBoxDefaultButton.Button1);
+        
+            }
         }
-
+    
         private void btnatras_Click(object sender, EventArgs e)
         {
             MenuAdmin admin = new MenuAdmin();
@@ -52,44 +73,46 @@ namespace Smart
 
 
         //Textbox1 --> ID SUCURSAL
-        private void textBox1_Leave(object sender, EventArgs e)
+        private void txtIDSucursal_Leave(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (txtIDSucursal.Text == "")
             {
-                textBox1.Text = "Ej: 4512";
-                textBox1.ForeColor = Color.Gray;
+                txtIDSucursal.Text = "Ej: 4512";
+                txtIDSucursal.ForeColor = Color.Gray;
             }
         }
 
-        private void textBox1_Enter(object sender, EventArgs e)
+        private void txtIDSucursal_Enter(object sender, EventArgs e)
         {
-            if (textBox1.Text == "Ej: 4512")
+            if (txtIDSucursal.Text == "Ej: 4512")
             {
-                textBox1.Text = "";
-                textBox1.ForeColor = Color.Black;
+                txtIDSucursal.Text = "";
+                txtIDSucursal.ForeColor = Color.Black;
             }
         }
 
         //Textbox5 --> CEDULA ADMIN
-        private void textBox5_Leave(object sender, EventArgs e)
+        private void txtCedulaAdmin_Leave(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (txtCedulaAdmin.Text == "")
             {
-                textBox1.Text = "Ej: 000000000";
-                textBox1.ForeColor = Color.Gray;
+                txtCedulaAdmin.Text = "Ej: 000000000";
+                txtCedulaAdmin.ForeColor = Color.Gray;
             }
         }
 
-        private void textBox5_Enter(object sender, EventArgs e)
+        private void txtCedulaAdmin_Enter(object sender, EventArgs e)
         {
-            if (textBox5.Text == "Ej: 000000000")
+            if (txtCedulaAdmin.Text == "Ej: 000000000")
             {
-                textBox5.Text = "";
-                textBox5.ForeColor = Color.Black;
+                txtCedulaAdmin.Text = "";
+                txtCedulaAdmin.ForeColor = Color.Black;
             }
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
