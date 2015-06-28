@@ -45,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoBaseDatos.cs" />
+    <Compile Include="VerProductosPorMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerProductosPorMarcas.Designer.cs">
+      <DependentUpon>VerProductosPorMarcas.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalVar.cs" />
     <Compile Include="VerMarcas.cs">
       <SubType>Form</SubType>
@@ -138,12 +144,15 @@
     <Compile Include="VerCategorias.Designer.cs">
       <DependentUpon>VerCategorias.cs</DependentUpon>
     </Compile>
-    <Compile Include="VerProductos.cs">
+    <Compile Include="VerProductosPorProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VerProductos.Designer.cs">
-      <DependentUpon>VerProductos.cs</DependentUpon>
+    <Compile Include="VerProductosPorProductos.Designer.cs">
+      <DependentUpon>VerProductosPorProductos.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VerProductosPorMarcas.resx">
+      <DependentUpon>VerProductosPorMarcas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VerMarcas.resx">
       <DependentUpon>VerMarcas.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,8 +208,8 @@
     <EmbeddedResource Include="VerCategorias.resx">
       <DependentUpon>VerCategorias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VerProductos.resx">
-      <DependentUpon>VerProductos.cs</DependentUpon>
+    <EmbeddedResource Include="VerProductosPorProductos.resx">
+      <DependentUpon>VerProductosPorProductos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

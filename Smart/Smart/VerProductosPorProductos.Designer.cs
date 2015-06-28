@@ -1,6 +1,6 @@
 ﻿namespace Smart
 {
-    partial class VerProductos
+    partial class VerProductosPorProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerProductos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerProductosPorProductos));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -132,7 +132,7 @@
             this.btnatras.UseVisualStyleBackColor = true;
             this.btnatras.Click += new System.EventHandler(this.btnatras_Click);
             // 
-            // VerProductos
+            // VerProductosPorProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -144,9 +144,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "VerProductos";
+            this.Name = "VerProductosPorProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "S-mart: Ver Productos";
+            this.Text = "S-mart: Ver Productos Por Productos";
             this.Load += new System.EventHandler(this.VerProductos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

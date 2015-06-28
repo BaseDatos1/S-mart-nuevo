@@ -190,6 +190,7 @@
             this.porProductoToolStripMenuItem.Name = "porProductoToolStripMenuItem";
             this.porProductoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.porProductoToolStripMenuItem.Text = "Por Producto";
+            this.porProductoToolStripMenuItem.Click += new System.EventHandler(this.verProductosPorProductosToolStripMenuItem_Click);
             // 
             // porMarcaToolStripMenuItem
             // 

@@ -56,6 +56,8 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.porProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.porMarcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -163,10 +165,12 @@
             // 
             // productoToolStripMenuItem3
             // 
+            this.productoToolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.porProductosToolStripMenuItem,
+            this.porMarcasToolStripMenuItem});
             this.productoToolStripMenuItem3.Name = "productoToolStripMenuItem3";
             this.productoToolStripMenuItem3.Size = new System.Drawing.Size(154, 22);
             this.productoToolStripMenuItem3.Text = "Productos";
-            this.productoToolStripMenuItem3.Click += new System.EventHandler(this.verProductosToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
@@ -276,6 +280,18 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // porProductosToolStripMenuItem
+            // 
+            this.porProductosToolStripMenuItem.Name = "porProductosToolStripMenuItem";
+            this.porProductosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.porProductosToolStripMenuItem.Text = "Por Productos";
+            // 
+            // porMarcasToolStripMenuItem
+            // 
+            this.porMarcasToolStripMenuItem.Name = "porMarcasToolStripMenuItem";
+            this.porMarcasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.porMarcasToolStripMenuItem.Text = "Por Marcas";
+            // 
             // MenuAdminSucursal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,5 +345,7 @@
         private System.Windows.Forms.ToolStripMenuItem compraToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem compraToolStripMenuItem2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem porProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem porMarcasToolStripMenuItem;
     }
 }

@@ -92,14 +92,16 @@ namespace Smart
 
         private void verProductosPorProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VerProductos verprod = new VerProductos();
+            VerProductosPorProductos verprod = new VerProductosPorProductos();
             verprod.Show();
             this.Hide();
         }
 
         private void verProductosPorMarcaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            VerProductosPorMarcas verprod = new VerProductosPorMarcas();
+            verprod.Show();
+            this.Hide();
         }
 
         private void verUsuariosToolStripMenuItem_Click(object sender, EventArgs e)

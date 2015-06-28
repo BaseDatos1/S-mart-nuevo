@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Smart
 {
-    public partial class VerProductos : Form
+    public partial class VerProductosPorProductos : Form
     {
         AccesoBaseDatos baseDatos;
 
-        public VerProductos()
+        public VerProductosPorProductos()
         {
             InitializeComponent();
             baseDatos = new AccesoBaseDatos();

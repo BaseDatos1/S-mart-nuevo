@@ -91,7 +91,7 @@ namespace Smart
 
         private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VerProductos verprod = new VerProductos();
+            VerProductosPorProductos verprod = new VerProductosPorProductos();
             verprod.Show();
             this.Hide();
         }
