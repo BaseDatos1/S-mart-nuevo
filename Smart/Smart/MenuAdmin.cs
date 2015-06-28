@@ -71,5 +71,12 @@ namespace Smart
             categorias.Show();
         }
 
+        private void categoríaToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            VerCategorias cat = new VerCategorias();
+            cat.Show();
+            this.Hide();
+        }
+
     }
 }

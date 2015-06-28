@@ -167,6 +167,7 @@
             this.categoríaToolStripMenuItem3.Name = "categoríaToolStripMenuItem3";
             this.categoríaToolStripMenuItem3.Size = new System.Drawing.Size(154, 22);
             this.categoríaToolStripMenuItem3.Text = "Características";
+            this.categoríaToolStripMenuItem3.Click += new System.EventHandler(this.categoríaToolStripMenuItem3_Click);
             // 
             // productoToolStripMenuItem3
             // 

@@ -1,6 +1,6 @@
 ﻿namespace Smart
 {
-    partial class VerProductos
+    partial class VerCategorias
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerProductos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerCategorias));
+            this.btnatras = new System.Windows.Forms.Button();
+            this.displayCategorias = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtbusqueda = new System.Windows.Forms.TextBox();
             this.cmbCriterio = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.displayProductos = new System.Windows.Forms.DataGridView();
-            this.btnatras = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.displayCategorias)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.displayProductos)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnatras
+            // 
+            this.btnatras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnatras.Location = new System.Drawing.Point(12, 625);
+            this.btnatras.Name = "btnatras";
+            this.btnatras.Size = new System.Drawing.Size(64, 24);
+            this.btnatras.TabIndex = 12;
+            this.btnatras.Text = "Atrás";
+            this.btnatras.UseVisualStyleBackColor = true;
+            this.btnatras.Click += new System.EventHandler(this.btnatras_Click);
+            // 
+            // displayCategorias
+            // 
+            this.displayCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.displayCategorias.Location = new System.Drawing.Point(53, 152);
+            this.displayCategorias.Name = "displayCategorias";
+            this.displayCategorias.Size = new System.Drawing.Size(663, 450);
+            this.displayCategorias.TabIndex = 11;
             // 
             // groupBox1
             // 
@@ -49,10 +68,10 @@
             this.groupBox1.Controls.Add(this.cmbCriterio);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(51, 29);
+            this.groupBox1.Location = new System.Drawing.Point(53, 34);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(663, 78);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de búsqueda";
             // 
@@ -65,7 +84,7 @@
             this.btnBuscar.TabIndex = 10;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label2
             // 
@@ -88,20 +107,12 @@
             // 
             this.cmbCriterio.FormattingEnabled = true;
             this.cmbCriterio.Items.AddRange(new object[] {
-            "Código Externo",
-            "Código Interno",
-            "Costo",
-            "Precio Actual",
-            "Fecha de vencimiento",
-            "Peso",
-            "Medida de alto (cm)",
-            "Medida de largo (cm)",
-            "Medida de ancho (cm)"});
+            "Nombre",
+            "Descripción"});
             this.cmbCriterio.Location = new System.Drawing.Point(89, 28);
             this.cmbCriterio.Name = "cmbCriterio";
             this.cmbCriterio.Size = new System.Drawing.Size(176, 24);
             this.cmbCriterio.TabIndex = 1;
-            this.cmbCriterio.SelectedIndexChanged += new System.EventHandler(this.cmbCriterio_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -112,57 +123,38 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Valor:";
             // 
-            // displayProductos
-            // 
-            this.displayProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.displayProductos.Location = new System.Drawing.Point(51, 147);
-            this.displayProductos.Name = "displayProductos";
-            this.displayProductos.Size = new System.Drawing.Size(663, 450);
-            this.displayProductos.TabIndex = 1;
-            // 
-            // btnatras
-            // 
-            this.btnatras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnatras.Location = new System.Drawing.Point(12, 625);
-            this.btnatras.Name = "btnatras";
-            this.btnatras.Size = new System.Drawing.Size(64, 24);
-            this.btnatras.TabIndex = 9;
-            this.btnatras.Text = "Atrás";
-            this.btnatras.UseVisualStyleBackColor = true;
-            this.btnatras.Click += new System.EventHandler(this.btnatras_Click);
-            // 
-            // VerProductos
+            // VerCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(784, 661);
             this.Controls.Add(this.btnatras);
-            this.Controls.Add(this.displayProductos);
+            this.Controls.Add(this.displayCategorias);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "VerProductos";
+            this.Name = "VerCategorias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "S-mart: Ver Productos";
-            this.Load += new System.EventHandler(this.VerProductos_Load);
+            this.Text = "S-mart: Ver Características";
+            this.Load += new System.EventHandler(this.VerCategorias_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.displayCategorias)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.displayProductos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Button btnatras;
+        private System.Windows.Forms.DataGridView displayCategorias;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtbusqueda;
         private System.Windows.Forms.ComboBox cmbCriterio;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView displayProductos;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnatras;
-        private System.Windows.Forms.Button btnBuscar;
     }
 }

@@ -292,7 +292,8 @@ namespace Smart
                 datagridView.DataSource = bindingSource;
                 for (int i = 0; i < datagridView.ColumnCount; i++)
                 {
-                    datagridView.Columns[i].Width = 100;
+                    
+                    datagridView.Columns[i].Width = 150;
                 }
             }
             catch (SqlException ex)
