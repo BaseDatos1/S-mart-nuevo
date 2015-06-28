@@ -108,7 +108,7 @@
             // txtConfirmacion
             // 
             this.txtConfirmacion.Location = new System.Drawing.Point(126, 280);
-            this.txtConfirmacion.MaxLength = 30;
+            this.txtConfirmacion.MaxLength = 100;
             this.txtConfirmacion.Name = "txtConfirmacion";
             this.txtConfirmacion.PasswordChar = '*';
             this.txtConfirmacion.Size = new System.Drawing.Size(179, 22);
@@ -147,7 +147,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(126, 172);
-            this.txtTelefono.MaxLength = 15;
+            this.txtTelefono.MaxLength = 9;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(179, 22);
             this.txtTelefono.TabIndex = 5;
@@ -254,7 +254,7 @@
             // txtContraseña
             // 
             this.txtContraseña.Location = new System.Drawing.Point(126, 244);
-            this.txtContraseña.MaxLength = 30;
+            this.txtContraseña.MaxLength = 100;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(179, 22);

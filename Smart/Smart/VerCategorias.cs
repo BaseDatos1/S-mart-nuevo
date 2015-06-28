@@ -54,5 +54,28 @@ namespace Smart
             admin.Show();
             this.Hide();
         }
+
+
+        //Verifica que en los "textbox" no se puedan ingresar ';' ni '-'
+        public static void noEsGuion(KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '-' || e.KeyChar == ';')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        public void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noEsGuion(e);
+        }
+
+
+
+
     }
 }
