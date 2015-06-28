@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdminSucursal));
             this.btnatras = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.insertarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +55,9 @@
             this.compraToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnatras
@@ -230,19 +232,19 @@
             // productoToolStripMenuItem2
             // 
             this.productoToolStripMenuItem2.Name = "productoToolStripMenuItem2";
-            this.productoToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.productoToolStripMenuItem2.Size = new System.Drawing.Size(123, 22);
             this.productoToolStripMenuItem2.Text = "Producto";
             // 
             // usuariosToolStripMenuItem2
             // 
             this.usuariosToolStripMenuItem2.Name = "usuariosToolStripMenuItem2";
-            this.usuariosToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem2.Size = new System.Drawing.Size(123, 22);
             this.usuariosToolStripMenuItem2.Text = "Usuario";
             // 
             // compraToolStripMenuItem2
             // 
             this.compraToolStripMenuItem2.Name = "compraToolStripMenuItem2";
-            this.compraToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.compraToolStripMenuItem2.Size = new System.Drawing.Size(123, 22);
             this.compraToolStripMenuItem2.Text = "Compra";
             // 
             // acercaDeToolStripMenuItem
@@ -259,23 +261,35 @@
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
-            // MenuAdmin
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Smart.Properties.Resources._11668086_1549457955372310_849974829_n;
+            this.pictureBox1.Location = new System.Drawing.Point(137, 92);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(511, 476);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // MenuAdminSucursal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(784, 661);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnatras);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.Name = "MenuAdmin";
+            this.Name = "MenuAdminSucursal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "S-mart: Opciones de Administrador de Sucursal";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,5 +323,6 @@
         private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compraToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem compraToolStripMenuItem2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
