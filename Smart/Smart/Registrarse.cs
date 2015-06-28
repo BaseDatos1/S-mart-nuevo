@@ -234,8 +234,8 @@ namespace Smart
 
         private void Registrarse_Load(object sender, EventArgs e)
         {
-            string consulta = "Select Id_Sucursal from Sucursal";
-            baseDatos.cargaComboboxID(cmbSucursales, consulta);
+            //string consulta = "Select Id_Sucursal from Sucursal";
+            //baseDatos.cargaComboboxID(cmbSucursales, consulta);
         }
 
     }

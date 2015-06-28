@@ -38,7 +38,7 @@ namespace Smart
                 {
                     MessageBox.Show("Producto almacenado correctamente, debe asociarle al menos una categoría", "Insertar Producto");
 
-                    insCategoria agregar = new insCategoria();
+                    insCategoria agregar = new insCategoria(txtExterno.Text);
                     agregar.Show();
                     
                 }
