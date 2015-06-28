@@ -35,9 +35,9 @@ namespace Smart
             //                  " FROM Producto P " + 
             //                  " WHERE Id_marca = '" + selected + "'";
 
-            string consulta = " SELECT P.CBExterno, P.CBinterno, P.Fecha, P.Alto, P.Largo, P.Ancho, P.Volumen, P.Peso, P.Costo, P.Precio, P.Desc_Larga, P.Desc_Corta, P.Id_marca, C.Nombre" +
-                              " FROM Producto P JOIN Asignado A ON P.CBExterno = A.CBExterno_Producto JOIN Categoria C ON A.ID_Categoria = C.Id_cat" +
-                              " WHERE Id_marca = '" + selected + "' JOIN Vende V ON V.CBExterno_Producto = P.CBExterno and V.ID_Sucursal = '" + GlobalVar.IdSucursalActual + "' ";                    
+            string consulta = " SELECT P.CBExterno, P.CBinterno, P.Fecha, P.Alto, P.Largo, P.Ancho, P.Volumen, P.Peso, P.Costo, P.Precio, P.Desc_Larga, P.Desc_Corta, P.Id_marca, C.Nombre, V.cantidad" +
+                              " FROM Producto P JOIN Asignado A ON P.CBExterno = A.CBExterno_Producto JOIN Categoria C ON A.ID_Categoria = C.Id_cat JOIN Vende V ON V.CBExterno_Producto = P.CBExterno and V.ID_Sucursal = '" + GlobalVar.IdSucursalActual + "'" +
+                              " WHERE Id_marca = '" + selected + "' ";                    
 
             baseDatos.llenarTabla(consulta, displayProductos);
         }
@@ -46,8 +46,7 @@ namespace Smart
         {           
             string consulta1 = "Select Nombre_marca FROM Marca";
             baseDatos.cargaCombobox(cmbCriterio, consulta1);
-
-            GlobalVar.IdSucursalActual = 1;
+            
             string consulta = " SELECT P.CBExterno, P.CBinterno, P.Fecha, P.Alto, P.Largo, P.Ancho, P.Volumen, P.Peso, P.Costo, P.Precio, P.Desc_Larga, P.Desc_Corta, P.Id_marca, C.Nombre, V.cantidad" +
                               " FROM Producto P JOIN Asignado A ON P.CBExterno = A.CBExterno_Producto JOIN Categoria C ON A.ID_Categoria = C.Id_cat JOIN Vende V ON V.CBExterno_Producto = P.CBExterno and V.ID_Sucursal = '" + GlobalVar.IdSucursalActual + "'";
                         
