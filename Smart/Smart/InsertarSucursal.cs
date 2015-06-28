@@ -12,15 +12,18 @@ namespace Smart
 {
     public partial class InsertarSucursal : Form
     {
+
+        AccesoBaseDatos baseDatos;
+
         public InsertarSucursal()
         {
             InitializeComponent();
+            baseDatos = new AccesoBaseDatos();
 
-            textBox1.Text = "Ej: 4512";
-            textBox1.ForeColor = Color.Gray;
-            textBox5.Text = "Ej: 000000000";
-            textBox5.ForeColor = Color.Gray;
-
+            txtID.Text = "Ej: 4512";
+            txtID.ForeColor = Color.Gray;
+            txtCedulaAdmin.Text = "Ej: 000000000";
+            txtCedulaAdmin.ForeColor = Color.Gray;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -38,8 +41,15 @@ namespace Smart
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (txtID.Text != "" && txtNombre.Text != "" && txtDireccion.Text != "" && txtCedulaAdmin.Text != "")
+            {
+                int ID = int.Parse(txtID.Text);
+
+                baseDatos.insertarSurcursalSQL(ID, txtNombre.Text, txtCoordenadas.Text, txtDireccion.Text, txtCedulaAdmin.Text);
+                
+            }
 
         }
 
@@ -54,38 +64,38 @@ namespace Smart
         //Textbox1 --> ID SUCURSAL
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (txtID.Text == "")
             {
-                textBox1.Text = "Ej: 4512";
-                textBox1.ForeColor = Color.Gray;
+                txtID.Text = "Ej: 4512";
+                txtID.ForeColor = Color.Gray;
             }
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            if (textBox1.Text == "Ej: 4512")
+            if (txtID.Text == "Ej: 4512")
             {
-                textBox1.Text = "";
-                textBox1.ForeColor = Color.Black;
+                txtID.Text = "";
+                txtID.ForeColor = Color.Black;
             }
         }
 
         //Textbox5 --> CEDULA ADMIN
         private void textBox5_Leave(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (txtID.Text == "")
             {
-                textBox1.Text = "Ej: 000000000";
-                textBox1.ForeColor = Color.Gray;
+                txtID.Text = "Ej: 000000000";
+                txtID.ForeColor = Color.Gray;
             }
         }
 
         private void textBox5_Enter(object sender, EventArgs e)
         {
-            if (textBox5.Text == "Ej: 000000000")
+            if (txtCedulaAdmin.Text == "Ej: 000000000")
             {
-                textBox5.Text = "";
-                textBox5.ForeColor = Color.Black;
+                txtCedulaAdmin.Text = "";
+                txtCedulaAdmin.ForeColor = Color.Black;
             }
         }
 

@@ -164,7 +164,6 @@ namespace Smart
                 {
                     txt.Text = datos.GetString(0);
                 }
-
             }
         }
 
@@ -262,21 +261,17 @@ namespace Smart
 
         public void cargaComboboxID(ComboBox c1, string consulta)
         {
-
             SqlDataReader datos = null;
             datos = ejecutarConsulta(consulta);
-
             if (datos != null)
             {
                 while (datos.Read())
                 {
                     c1.Items.Add(datos.GetInt32(0));
                 }
-
             }
         }
-
-
+        
 
         /*Método para actualizar un dataGrid*/
         public void llenarTabla(string consulta, DataGridView datagridView)
@@ -302,6 +297,44 @@ namespace Smart
                 MessageBox.Show(mensajeError);
             }
         }
+
+        public bool insertarSurcursalSQL(int IDSucursal, string NombreSucursal, string Coordenadas, string Direccion, string CedulaAdmin) 
+        {
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("InsertarSucursal", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add("@ID_Sucursal", SqlDbType.Int).Value = IDSucursal;
+                        cmd.Parameters.Add("@Nombre_Sucursal", SqlDbType.VarChar).Value = NombreSucursal;
+                        cmd.Parameters.Add("@Coordenadas", SqlDbType.VarChar).Value = Coordenadas;
+                        cmd.Parameters.Add("@Direccion", SqlDbType.VarChar).Value = Direccion;
+                        cmd.Parameters.Add("@Cedula_AdminSucursal", SqlDbType.VarChar).Value = CedulaAdmin;
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("El ID de la sucursal ingresada ya existe en la base de datos S-mart"
+                        , "Insertar Sucursal"
+                        , MessageBoxButtons.OK
+                        , MessageBoxIcon.Exclamation
+                        , MessageBoxDefaultButton.Button1);
+
+                        return false;
+                    }
+
+                }
+            }
+
+
+        } 
+
 
     }
 }
