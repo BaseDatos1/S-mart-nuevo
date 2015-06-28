@@ -53,6 +53,22 @@ namespace Smart
             return datos;
         }
 
+        /*Para obtener la sucursal en la que trabaja ese empleado*/
+        public void obtenerSucursal(string consulta)
+        {
+            SqlDataReader datos = null;
+            datos = ejecutarConsulta(consulta);
+
+            if (datos != null)
+            {
+                while (datos.Read())
+                {
+                    GlobalVar.IdSucursalActual = datos.GetInt32(0);
+                }
+            }
+        }
+
+
         /**
          * Permite ejecutar una consulta SQL, los datos son devueltos en un DataTable
          */

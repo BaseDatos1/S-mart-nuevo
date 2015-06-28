@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoBaseDatos.cs" />
+    <Compile Include="GlobalVar.cs" />
     <Compile Include="VerMarcas.cs">
       <SubType>Form</SubType>
     </Compile>

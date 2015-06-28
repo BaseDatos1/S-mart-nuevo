@@ -34,6 +34,7 @@ namespace Smart
 
             if(tipoUsuario.Text == "Administrador")
             {
+                GlobalVar.TipoUsuarioSistema = tipoUsuario.Text;
                 MenuAdmin admin = new MenuAdmin();
                 admin.Show();
                 this.Hide();
@@ -55,6 +56,9 @@ namespace Smart
 
                         if (existeConsulta)
                         {
+                            baseDatos.obtenerSucursal("Select ID_Sucursal FROM Sucursal WHERE Cedula_AdminSucursal ='" + txtCedula.Text + "'");
+                            GlobalVar.CedulaUsuarioActual = txtCedula.Text;
+                            GlobalVar.TipoUsuarioSistema = tipoUsuario.Text;
                             MenuAdminSucursal adminSuc = new MenuAdminSucursal();
                             adminSuc.Show();
                             this.Hide();
@@ -75,6 +79,9 @@ namespace Smart
 
                         if (existeConsulta)
                         {
+                            baseDatos.obtenerSucursal("Select ID_Sucursal FROM Encargado_De_Inventario WHERE Cedula ='" + txtCedula.Text + "'");
+                            GlobalVar.CedulaUsuarioActual = txtCedula.Text;
+                            GlobalVar.TipoUsuarioSistema = tipoUsuario.Text;
                             MenuEncargado encargado = new MenuEncargado();
                             encargado.Show();
                             this.Hide();
@@ -94,6 +101,9 @@ namespace Smart
 
                         if (existeConsulta)
                         {
+                            baseDatos.obtenerSucursal("Select ID_Sucursal FROM Cajero WHERE Cedula ='" + txtCedula.Text + "'");
+                            GlobalVar.CedulaUsuarioActual = txtCedula.Text;
+                            GlobalVar.TipoUsuarioSistema = tipoUsuario.Text;
                             MenuCajero cajero = new MenuCajero();
                             cajero.Show();
                             this.Hide();
