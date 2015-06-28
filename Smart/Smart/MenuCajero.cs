@@ -42,5 +42,38 @@ namespace Smart
             compra.Show();
             this.Hide();
         }
+
+        private void verMarcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerMarcas ver_marcas = new VerMarcas();
+            ver_marcas.Show();
+        }
+
+        private void verCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerCategorias cat = new VerCategorias();
+            cat.Show();
+            this.Hide();
+        }
+
+        private void verProductosPorProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerProductosPorProductos verprod = new VerProductosPorProductos();
+            verprod.Show();
+            this.Hide();
+        }
+
+        private void verProductosPorMarcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerProductosPorMarcas verprod = new VerProductosPorMarcas();
+            verprod.Show();
+            this.Hide();
+        }
+
+        private void verComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
