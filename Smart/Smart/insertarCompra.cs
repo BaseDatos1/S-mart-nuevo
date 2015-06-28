@@ -45,5 +45,10 @@ namespace Smart
                 e.Handled = true;
             }
         }
+
+        private void InsertarCompra_Load(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

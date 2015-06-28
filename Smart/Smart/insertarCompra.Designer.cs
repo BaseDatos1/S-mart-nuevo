@@ -214,6 +214,7 @@
             this.Name = "InsertarCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Smart: Insertar Compra";
+            this.Load += new System.EventHandler(this.InsertarCompra_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.displayProductos)).EndInit();
