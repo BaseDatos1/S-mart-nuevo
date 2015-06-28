@@ -28,7 +28,6 @@ namespace Smart
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-             
             if (txtDistruibuidor.Text != "" && txtMarca.Text != "")
             {
                 bool agregarMarca = baseDatos.insertarMarca(txtMarca.Text, txtDistruibuidor.Text);
@@ -49,7 +48,6 @@ namespace Smart
                 MessageBoxIcon.Exclamation,
                 MessageBoxDefaultButton.Button1);
             }
-        
         }
     }
 }

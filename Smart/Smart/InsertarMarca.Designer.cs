@@ -46,7 +46,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtDistruibuidor);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.groupBox1.Location = new System.Drawing.Point(28, 47);
+            this.groupBox1.Location = new System.Drawing.Point(28, 44);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(423, 198);
             this.groupBox1.TabIndex = 1;
@@ -105,7 +105,7 @@
             // btnatras
             // 
             this.btnatras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnatras.Location = new System.Drawing.Point(28, 286);
+            this.btnatras.Location = new System.Drawing.Point(28, 285);
             this.btnatras.Name = "btnatras";
             this.btnatras.Size = new System.Drawing.Size(64, 24);
             this.btnatras.TabIndex = 10;
@@ -121,6 +121,7 @@
             this.ClientSize = new System.Drawing.Size(484, 332);
             this.Controls.Add(this.btnatras);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "InsertarMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
