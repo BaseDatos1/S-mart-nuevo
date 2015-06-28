@@ -42,6 +42,8 @@
             this.marcaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.categoríaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.productoToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.porProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.porMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -176,10 +178,25 @@
             // 
             // productoToolStripMenuItem3
             // 
+            this.productoToolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.porProductoToolStripMenuItem,
+            this.porMarcaToolStripMenuItem});
             this.productoToolStripMenuItem3.Name = "productoToolStripMenuItem3";
             this.productoToolStripMenuItem3.Size = new System.Drawing.Size(154, 22);
             this.productoToolStripMenuItem3.Text = "Productos";
-            this.productoToolStripMenuItem3.Click += new System.EventHandler(this.verProductosToolStripMenuItem_Click);
+            // 
+            // porProductoToolStripMenuItem
+            // 
+            this.porProductoToolStripMenuItem.Name = "porProductoToolStripMenuItem";
+            this.porProductoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.porProductoToolStripMenuItem.Text = "Por Producto";
+            // 
+            // porMarcaToolStripMenuItem
+            // 
+            this.porMarcaToolStripMenuItem.Name = "porMarcaToolStripMenuItem";
+            this.porMarcaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.porMarcaToolStripMenuItem.Text = "Por Marca";
+            this.porMarcaToolStripMenuItem.Click += new System.EventHandler(this.verProductosPorMarcaToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
@@ -375,5 +392,7 @@
         private System.Windows.Forms.ToolStripMenuItem compraToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem marcaToolStripMenuItem2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem porProductoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem porMarcaToolStripMenuItem;
     }
 }
