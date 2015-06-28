@@ -37,8 +37,9 @@ namespace Smart
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-
-            if (txtCedula.Text != "" && txtNombre.Text != "" && txtApellido1.Text != "" && txtApellido2.Text != "" && txtTelefono.Text != "" && txtEmail.Text != "" && txtContraseña.Text != "" && txtConfirmacion.Text != "" /* && TipoUsuario.Text != "" */ )
+            int numSucursal = 0;
+            bool agregarUsuario = false;
+            if (txtCedula.Text != "" && txtNombre.Text != "" && txtApellido1.Text != "" && txtApellido2.Text != "" && txtTelefono.Text != "" && txtEmail.Text != "" && txtContraseña.Text != "" && txtConfirmacion.Text != "" && cmbTipoUsuario.Text != "")
             {
 
                 if (txtContraseña.Text != txtConfirmacion.Text)
@@ -50,35 +51,32 @@ namespace Smart
                     MessageBoxIcon.Exclamation,
                     MessageBoxDefaultButton.Button1);
                 }
-                else if(txtEmail.Text != "")
-                {                    
-                    try
-                    {
-                        var test = new MailAddress(txtEmail.Text);
-                    }
-                    catch (FormatException ex)
-                    {
-                        txtEmail.Text = "";
-                        // wrong format for email
-                        MessageBox.Show("Formato de email incorrecto. Inténtelo de nuevo. \nEj: persona@email.com"
-                            , "Registrarse"
-                            , MessageBoxButtons.OK
-                            , MessageBoxIcon.Exclamation
-                            , MessageBoxDefaultButton.Button1);
-                    }
-                }
                 else
                 {
-                    string tipoDeUsuario = cmbTipoUsuario.Text;
                     bool agregarPersona = baseDatos.insertarPersonaSQL(txtCedula.Text, txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtTelefono.Text, txtEmail.Text, txtContraseña.Text, txtConfirmacion.Text /*TipoUsuario.Text != "" */);
-                    //  bool agregar
+
+                    string tipoDeUsuario = cmbTipoUsuario.Text;
 
                     if (agregarPersona)
                     {
-                        MessageBox.Show("El " + tipoDeUsuario + " registrado con éxito en el sistema S-mart.", "Registrar usuario");
+
+                        if (tipoDeUsuario != "Administrador")
+                        {
+                            string sucursal = cmbSucursales.Text;
+                            numSucursal = int.Parse(sucursal);
+                        }
+
+                        agregarUsuario = baseDatos.insertarUsuario(txtCedula.Text, tipoDeUsuario, numSucursal);
+                    }
+
+
+                    if (agregarPersona && agregarUsuario)
+                    {
+                        MessageBox.Show("El usuario se ha registrado con éxito en el sistema S-mart.", "Registrar usuario");
                         MenuAdmin admin = new MenuAdmin();
                         admin.Show();
                         this.Hide();
+
                     }
                 }
             }

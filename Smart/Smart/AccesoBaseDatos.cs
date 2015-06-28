@@ -117,6 +117,7 @@ namespace Smart
         }
 
         /*Metodo para insertar un nuevo usuario en la base de datos*/
+        /*Metodo para insertar un nuevo usuario en la base de datos*/
         public bool insertarPersonaSQL(string CedulaPersona, string NombrePersona, string Apellido1Persona, string Apellido2Persona, string TelefonoPersona, string EmailPersona, string ContraseñaPersona, string ContraseñaConfirmacion /*string TipoUsuario */)
         {
             using (SqlConnection con = new SqlConnection(conexion))
@@ -125,6 +126,7 @@ namespace Smart
                 {
                     try
                     {
+
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         cmd.Parameters.Add("@cedulaPersona", SqlDbType.VarChar).Value = CedulaPersona;
@@ -141,15 +143,126 @@ namespace Smart
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos S-mart"
-                            , "Insertar Usuario"
-                            , MessageBoxButtons.OK
-                            , MessageBoxIcon.Exclamation
-                            , MessageBoxDefaultButton.Button1);
-
+                        MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos", "Insertar Persona");
                         return false;
                     }
+
                 }
+            }
+
+        }
+
+        /*Método para agregar tipo de Usuario en la base de datos */
+        public bool insertarUsuario(string CedulaPersona, string tipoUsuario, int numeroSucursal = 0)
+        {
+            SqlConnection con = new SqlConnection(conexion);
+            con.Open();
+            SqlCommand cmd = null;
+
+            SqlParameter Cedula = new SqlParameter("@Cedula", SqlDbType.VarChar, 15);
+            Cedula.Value = CedulaPersona;
+
+            SqlParameter numSucursal = new SqlParameter("@ID_Sucursal", SqlDbType.Int, 4);
+            numSucursal.Value = numeroSucursal;
+
+            if (tipoUsuario == "Administrador")
+            {
+                string consulta = "INSERT INTO Admin_Sucursal (Cedula) VALUES (@Cedula)";
+                try
+                {
+                    cmd = new SqlCommand(consulta, con);
+
+
+                    cmd.Parameters.Add(Cedula);
+
+
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (SqlException ex)
+                {
+                  //  string mensajeError = ex.ToString();
+                    MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos S-mart");
+                    return false;
+                }
+            }
+
+            else if (tipoUsuario == "Cajero")
+            {
+                string consulta = "INSERT INTO Cajero (Cedula) VALUES (@CedulaPersona, @numeroSucursal)";
+                MessageBox.Show("Entre a Cajero");
+                try
+                {
+                    cmd = new SqlCommand(consulta, con);
+                    cmd.Parameters.Add(Cedula);
+                    cmd.Parameters.Add(numSucursal);
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (SqlException ex)
+                {
+                    //  string mensajeError = ex.ToString();
+                    MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos S-mart");
+                    return false;
+                }
+            }
+
+            else if (tipoUsuario == "Encargado de Inventario")
+            {
+                string consulta = "INSERT INTO Cliente (Cedula) VALUES (@CedulaPersona, @numeroSucursal)";
+                try
+                {
+                    cmd = new SqlCommand(consulta, con);
+                    cmd.Parameters.Add(Cedula);
+                    cmd.Parameters.Add(numSucursal);
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (SqlException ex)
+                {
+                    // string mensajeError = ex.ToString();
+                    MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos S-mart");
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un tipo de usuario");
+                return false;
+            }
+        }
+
+
+        /*Método para ingresar una marca en la base de datos */
+        public bool insertarMarca(string nombreMarca, string nombreDistruibuidor)
+        {
+            SqlConnection con = new SqlConnection(conexion);
+            con.Open();
+            SqlCommand cmd = null;
+
+            SqlParameter NomMarca = new SqlParameter("@Nombre_marca", SqlDbType.VarChar, 20);
+            NomMarca.Value = nombreMarca;
+
+            SqlParameter NomDistruibuidor = new SqlParameter("@Nombre_dist", SqlDbType.VarChar, 20);
+            NomDistruibuidor.Value = nombreDistruibuidor;
+
+
+            string consulta = "INSERT INTO Marca (Nombre_marca, Nombre_dist) VALUES (@Nombre_marca, @Nombre_dist )";
+            try
+            {
+                cmd = new SqlCommand(consulta, con);
+
+                cmd.Parameters.Add(NomMarca);
+                cmd.Parameters.Add(NomDistruibuidor);
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                //  string mensajeError = ex.ToString();
+                MessageBox.Show("El nombre de la marca ingresado ya existe en la base de datos S-mart");
+                return false;
             }
         }
 
