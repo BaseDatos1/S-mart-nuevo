@@ -17,7 +17,7 @@ namespace Smart
     class AccesoBaseDatos
     {
         /*En Initial Catalog se agrega la base de datos propia. Intregated Security es para utilizar Windows Authentication*/
-        String conexion = "Data Source=LARI-PC; Initial Catalog=Supermercado_inteligente; Integrated Security=SSPI";
+        String conexion = "Data Source=10.1.4.59; Initial Catalog=Supermercado_inteligente; Integrated Security=SSPI";
        
         /*En data source siempre se cambia por el servidor local de la compu*/   
         /**
