@@ -12,9 +12,13 @@ namespace Smart
 {
     public partial class InsertarCompra : Form
     {
+        AccesoBaseDatos baseDatos;
+
+
         public InsertarCompra()
         {
             InitializeComponent();
+            baseDatos = new AccesoBaseDatos();
         }
 
         private void btnatras_Click(object sender, EventArgs e)
@@ -24,14 +28,13 @@ namespace Smart
             this.Hide();
         }
 
-        private void labelListaDeProducto_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtProducto_KeyPress(object sender, KeyPressEventArgs e)
         {
             soloNumeros(e);
+            if (e.KeyChar == 13)
+            {
+                //
+            }
         }
 
         public static void soloNumeros(KeyPressEventArgs e)
@@ -52,6 +55,38 @@ namespace Smart
             string hora = DateTime.Now.ToString().Substring(10, 10);
             labelFecha.Text = fecha;
             labelHora.Text = DateTime.Now.ToString("HH:mm");
+
+            baseDatos.obtenerDatosUsuario("Select Nombre, Apellido1, Apellido2 FROM Persona WHERE  Cedula = '"+ GlobalVar.CedulaUsuarioActual+ "'", txtCajero);
+        }
+
+        private void txtCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                string revisar = txtCliente.Text;
+                baseDatos.obtenerDatosUsuario("Select Nombre, Apellido1, Apellido2 FROM Persona WHERE Cedula = '" + txtCliente.Text + "'", txtCliente);
+                if (revisar != txtCliente.Text)
+                {
+                    txtCliente.ReadOnly = true;
+                }
+                if (revisar == "")
+                {
+                    txtCliente.ReadOnly = true;
+                }
+            }
+        }
+
+        private void txtCaja_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(e);
+
+            if (e.KeyChar == 13)
+            {
+                if (int.Parse(txtCaja.Text) > 0)
+                {
+                    txtCaja.ReadOnly = true;
+                }
+            }
         }
     }
 }

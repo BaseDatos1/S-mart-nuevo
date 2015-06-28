@@ -68,6 +68,19 @@ namespace Smart
             }
         }
 
+        public void obtenerDatosUsuario(string consulta, TextBox txt)
+        {
+            SqlDataReader datos = null;
+            datos = ejecutarConsulta(consulta);
+
+            if (datos != null)
+            {
+                while (datos.Read())
+                {
+                    txt.Text = datos.GetString(0) + " " + datos.GetString(1) + " " + datos.GetString(2);
+                }
+            }
+        }
 
         /**
          * Permite ejecutar una consulta SQL, los datos son devueltos en un DataTable
