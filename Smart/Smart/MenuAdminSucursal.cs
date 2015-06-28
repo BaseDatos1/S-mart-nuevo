@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Smart
 {
-    public partial class MenuAdmin : Form
+    public partial class MenuAdminSucursal : Form
     {
-        public MenuAdmin()
+        public MenuAdminSucursal()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Smart
 {
-    partial class MenuAdmin
+    partial class MenuAdminSucursal
     {
         /// <summary>
         /// Required designer variable.
