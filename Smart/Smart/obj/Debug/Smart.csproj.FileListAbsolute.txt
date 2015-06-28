@@ -216,3 +216,4 @@ C:\Users\b35311\Documents\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.R
 C:\Users\b35311\Documents\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerCategorias.resources
 C:\Users\b35311\Documents\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerProductos.resources
 C:\Users\b35311\Documents\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.csproj.GenerateResource.Cache
+C:\Users\b35311\Documents\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerMarcas.resources

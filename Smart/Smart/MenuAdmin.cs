@@ -28,14 +28,7 @@ namespace Smart
         {
             MessageBox.Show("Proyecto S-mart: Supermercado Inteligente realizado por Gaudy Blanco Meneses, Larissa Arroyo Castillo y José Eduardo Picado Salas para el curso Bases de Datos 1 de la Escuela de Ciencias de la Computación e Informática de la UCR.", "Acerca de");
         }
-
-        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InsertarProducto insProd = new InsertarProducto();
-            insProd.Show();
-            this.Hide();
-        }
-
+              
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpcIniciales iniciales = new OpcIniciales();
@@ -43,7 +36,8 @@ namespace Smart
             this.Hide();
         }
 
-        private void sucursalToolStripMenuItem_Click(object sender, EventArgs e)
+        // MENU INSERTAR
+        private void insertarSucursalToolStripMenuItem_Click(object sender, EventArgs e)
         {            
             InsertarSucursal insSucursal = new InsertarSucursal();
             insSucursal.Show();
@@ -51,11 +45,23 @@ namespace Smart
              
         }
 
-        private void productoToolStripMenuItem3_Click(object sender, EventArgs e)
+        private void insertarMarcaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VerProductos verprod = new VerProductos();
-            verprod.Show();
-            this.Hide(); 
+            InsertarMarca cat = new InsertarMarca();
+            cat.Show();
+        }
+
+        private void insertarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertarCategorias categorias = new InsertarCategorias();
+            categorias.Show();
+        }   
+              
+        private void insertarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertarProducto insProd = new InsertarProducto();
+            insProd.Show();
+            this.Hide();
         }
 
         private void insertarCompraToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,23 +71,40 @@ namespace Smart
             this.Hide();
         }
 
-        private void categoríaToolStripMenuItem_Click(object sender, EventArgs e)
+        // MENU VER
+        private void verSucursalesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InsertarCategorias categorias = new InsertarCategorias();
-            categorias.Show();
+
         }
 
-        private void categoríaToolStripMenuItem3_Click(object sender, EventArgs e)
+        private void verMarcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerMarcas ver_marcas = new VerMarcas();
+            ver_marcas.Show();
+        }
+
+        private void verCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VerCategorias cat = new VerCategorias();
             cat.Show();
             this.Hide();
         }
 
-        private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InsertarMarca cat = new InsertarMarca();
-            cat.Show();
+            VerProductos verprod = new VerProductos();
+            verprod.Show();
+            this.Hide();
+        }
+
+        private void verUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void verComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
 
     
