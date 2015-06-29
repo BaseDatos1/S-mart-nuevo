@@ -39,6 +39,10 @@ namespace Smart
         {
             int numSucursal = 0;
             bool agregarUsuario = false;
+            string sucursal = "";
+            bool agregarPersona = false;
+            bool eliminarUsu = false;
+            string tipoDeUsuario = "";
             if (txtCedula.Text != "" && txtNombre.Text != "" && txtApellido1.Text != "" && txtApellido2.Text != "" && txtTelefono.Text != "" && txtEmail.Text != "" && txtContraseña.Text != "" && txtConfirmacion.Text != "" && cmbTipoUsuario.Text != "")
             {
 
@@ -51,68 +55,93 @@ namespace Smart
                     MessageBoxIcon.Exclamation,
                     MessageBoxDefaultButton.Button1);
                 }
-                else
+                else if (txtEmail.Text != "")
                 {
-                    bool agregarPersona = baseDatos.insertarPersonaSQL(txtCedula.Text, txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtTelefono.Text, txtEmail.Text, txtContraseña.Text, txtConfirmacion.Text /*TipoUsuario.Text != "" */);
-
-                    string tipoDeUsuario = cmbTipoUsuario.Text;
-
-                    if (agregarPersona)
+                    try
                     {
-                        if (cmbSucursales.Text != "")
+                        var test = new MailAddress(txtEmail.Text);
+                    }
+                    catch (FormatException ex)
+                    {
+                        txtEmail.Text = "";
+                        // wrong format for email
+                        MessageBox.Show("Formato de email incorrecto. Inténtelo de nuevo. \nEj: persona@email.com"
+                            , "Registrarse"
+                            , MessageBoxButtons.OK
+                            , MessageBoxIcon.Exclamation
+                            , MessageBoxDefaultButton.Button1);
+                    }
+
+                    if(txtEmail.Text != "")
+                    {
+    
+                            agregarPersona = baseDatos.insertarPersonaSQL(txtCedula.Text, txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtTelefono.Text, txtEmail.Text, txtContraseña.Text, txtConfirmacion.Text);
+                            tipoDeUsuario = cmbTipoUsuario.Text;
+                     
+
+                        if (agregarPersona)
                         {
+                            if (cmbSucursales.Text != "")
+                            {
                            
-                            string sucursal = cmbSucursales.Text;
-                            numSucursal = int.Parse(sucursal);
-                            agregarUsuario = baseDatos.insertarUsuario(txtCedula.Text, tipoDeUsuario, numSucursal);
-                        }
+                                sucursal = cmbSucursales.Text;
+                                numSucursal = int.Parse(sucursal);
+                                agregarUsuario = baseDatos.insertarUsuario(txtCedula.Text, tipoDeUsuario, numSucursal);
+                            }
 
-                        else if (tipoDeUsuario == "Administrador Sucursal")
-                        {
-                            agregarUsuario = baseDatos.insertarUsuario(txtCedula.Text, tipoDeUsuario, numSucursal);
+                                else if (tipoDeUsuario == "Administrador Sucursal")
+                                {
+                                    agregarUsuario = baseDatos.insertarUsuario(txtCedula.Text, tipoDeUsuario, numSucursal);
+                                }
+                            else
+                            {
+                                MessageBox.Show("Debe ingresar un tipo de Usuario válido");
+                                eliminarUsu = baseDatos.eliminarUsuario(txtCedula.Text);
+                                
+                            }
+                            if(agregarPersona == true && agregarUsuario == false)
+                            {
+                                eliminarUsu = baseDatos.eliminarUsuario(txtCedula.Text);
+                            }
                         }
-                        else
-                        {
-                            MessageBox.Show("Debe ingresar un tipo de Usuario válido");
-                            //se debe borrar aqui el usuario porque no se insertó correctamente! 
-                        }
-                    }
                  
-                    if (agregarPersona && agregarUsuario)
-                    {
-                  
-                        if (tipoDeUsuario == "Administrador Sucursal")
-                        {
-                            baseDatos.obtenerSucursal("Select ID_Sucursal FROM Sucursal WHERE Cédula_AdminSucursal ='" + txtCedula.Text + "'");
-                            GlobalVar.CedulaUsuarioActual = txtCedula.Text;
-                            GlobalVar.TipoUsuarioSistema = tipoDeUsuario;
-                            MessageBox.Show("El usuario se ha registrado con éxito en el sistema S-mart.", "Registrar usuario");
-                            MenuAdminSucursal admin = new MenuAdminSucursal();
-                            admin.Show();
-                            this.Hide();
-                        }
-                        else if (tipoDeUsuario == "Encargado de Inventario")
-                        {
-                            baseDatos.obtenerSucursal("Select ID_Sucursal FROM Encargado_De_Inventario WHERE Cedula ='" + txtCedula.Text + "'");
-                            GlobalVar.CedulaUsuarioActual = txtCedula.Text;
-                            GlobalVar.TipoUsuarioSistema = tipoDeUsuario;
-                            MessageBox.Show("El usuario se ha registrado con éxito en el sistema S-mart.", "Registrar usuario");
-                            MenuEncargado encargadoInventario = new MenuEncargado();
-                            encargadoInventario.Show();
-                            this.Hide();
-                        }
-                        else
-                        {
-                            baseDatos.obtenerSucursal("Select ID_Sucursal FROM Cajero WHERE Cedula ='" + txtCedula.Text + "'");
-                            GlobalVar.CedulaUsuarioActual = txtCedula.Text;
-                            GlobalVar.TipoUsuarioSistema = tipoDeUsuario;
-                            MessageBox.Show("El usuario se ha registrado con éxito en el sistema S-mart.", "Registrar usuario");
-                            MenuCajero cajero = new MenuCajero();
-                            cajero.Show();
-                            this.Hide();
-                        }
-
                     }
+                }
+
+                if (agregarPersona && agregarUsuario)
+                {
+
+                    if (tipoDeUsuario == "Administrador Sucursal")
+                    {
+                        baseDatos.obtenerSucursal("Select ID_Sucursal FROM Sucursal WHERE Cédula_AdminSucursal ='" + txtCedula.Text + "'");
+                        GlobalVar.CedulaUsuarioActual = txtCedula.Text;
+                        GlobalVar.TipoUsuarioSistema = tipoDeUsuario;
+                        MessageBox.Show("El usuario se ha registrado con éxito en el sistema S-mart.", "Registrar usuario");
+                        MenuAdminSucursal admin = new MenuAdminSucursal();
+                        admin.Show();
+                        this.Hide();
+                    }
+                    else if (tipoDeUsuario == "Encargado de Inventario")
+                    {
+                        baseDatos.obtenerSucursal("Select ID_Sucursal FROM Encargado_De_Inventario WHERE Cedula ='" + txtCedula.Text + "'");
+                        GlobalVar.CedulaUsuarioActual = txtCedula.Text;
+                        GlobalVar.TipoUsuarioSistema = tipoDeUsuario;
+                        MessageBox.Show("El usuario se ha registrado con éxito en el sistema S-mart.", "Registrar usuario");
+                        MenuEncargado encargadoInventario = new MenuEncargado();
+                        encargadoInventario.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        baseDatos.obtenerSucursal("Select ID_Sucursal FROM Cajero WHERE Cedula ='" + txtCedula.Text + "'");
+                        GlobalVar.CedulaUsuarioActual = txtCedula.Text;
+                        GlobalVar.TipoUsuarioSistema = tipoDeUsuario;
+                        MessageBox.Show("El usuario se ha registrado con éxito en el sistema S-mart.", "Registrar usuario");
+                        MenuCajero cajero = new MenuCajero();
+                        cajero.Show();
+                        this.Hide();
+                    }
+
                 }
             }
             else

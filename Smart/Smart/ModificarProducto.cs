@@ -118,7 +118,6 @@ namespace Smart
                 if (existeConsulta)
                 {
 
-                    MessageBox.Show("El atributo en modificar Producto es: " + atributo);
                     bool modificacionProducto = baseDatos.modificarProducto(atributo, valorNuevo, txtExterno.Text);
 
                     if (modificacionProducto)

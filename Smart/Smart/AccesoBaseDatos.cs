@@ -147,7 +147,7 @@ namespace Smart
 
         /*Metodo para insertar un nuevo usuario en la base de datos*/
         /*Metodo para insertar un nuevo usuario en la base de datos*/
-        public bool insertarPersonaSQL(string CedulaPersona, string NombrePersona, string Apellido1Persona, string Apellido2Persona, string TelefonoPersona, string EmailPersona, string ContraseñaPersona, string ContraseñaConfirmacion /*string TipoUsuario */)
+        public bool insertarPersonaSQL(string CedulaPersona, string NombrePersona, string Apellido1Persona, string Apellido2Persona, string TelefonoPersona, string EmailPersona, string ContraseñaPersona, string ContraseñaConfirmacion)
         {
             using (SqlConnection con = new SqlConnection(conexion))
             {
@@ -172,7 +172,7 @@ namespace Smart
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show("La cédula del usuario PERSONA ingresado ya existe en la base de datos", "Insertar Persona");
+                        MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos", "Insertar Persona");
                         return false;
                     }
 
@@ -438,7 +438,6 @@ namespace Smart
                 else
                 {
                     string valorAtributo = nuevoValor;
-                    MessageBox.Show("El valor atributo es: " + valorAtributo);
                     int atributoNumerico = int.Parse(valorAtributo);
                     cmd.Parameters.AddWithValue("@nuevoValor", atributoNumerico);
                     cmd.Parameters.AddWithValue("@externo", codigoExterno);
@@ -455,54 +454,31 @@ namespace Smart
         }
 
 
-        
 
-        /*   public bool insertarUsuario(string CedulaPersona, int numeroSucursal, string tipoUsuario)
-           {
-               using (SqlConnection con = new SqlConnection(conexion))
-               {
-                   if (tipoUsuario == "Admininistrador")
-                   {
-                       string sql = "INSERT INTO Admin_Sucursal (Cedula) VALUES (@CedulaPersona)";
-                   }
-                   else if (tipoUsuario == "Cajero")
-                   {
-                       string sql = "INSERT INTO Cajero (Cedula) VALUES (@CedulaPersona, @numeroSucursal)";
-                   }
-                   else if (tipoUsuario == "Cliente")
-                   {
-                       string sql = "INSERT INTO Cliente (Cedula) VALUES (@CedulaPersona, @numeroSucursal)";
-                   }
-                   using (SqlCommand cmd = new SqlCommand("InsertarPersona", con))
-                   {
-                       try
-                       {
+        /*Método para eliminar un usuario */
+        public bool eliminarUsuario(string CedulaPersona)
+        {
+            SqlConnection con = new SqlConnection(conexion);
+            con.Open();
+            SqlCommand cmd = null;
 
-                           cmd.CommandType = CommandType.StoredProcedure;
+   
+            try
+            {
+                cmd = new SqlCommand("DELETE FROM Persona WHERE Cedula = @Cedula", con);
+                cmd.Parameters.AddWithValue("@Cedula", CedulaPersona);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
 
-                           cmd.Parameters.Add("@CedulaPersona", SqlDbType.VarChar).Value = CedulaPersona;
-                           cmd.Parameters.Add("@NombrePersona", SqlDbType.VarChar).Value = NombrePersona;
-                           cmd.Parameters.Add("@Apellido1Persona", SqlDbType.VarChar).Value = Apellido1Persona;
-                           cmd.Parameters.Add("@TelefonoPersona", SqlDbType.VarChar).Value = TelefonoPersona;
-                           cmd.Parameters.Add("@EmailPersona", SqlDbType.VarChar).Value = EmailPersona;
-                           cmd.Parameters.Add("@ContraseñaPersona", SqlDbType.VarChar).Value = ContraseñaPersona;
+            catch (SqlException ex)
+            {
+                
+                MessageBox.Show("No es posible eliminar el usuario.");
 
-                           con.Open();
-                           cmd.ExecuteNonQuery();
-                           return true;
-                       }
-                       catch (SqlException ex)
-                       {
-                           MessageBox.Show("La cédula del usuario ingresado ya existe en la base de datos", "Insertar Persona");
-                           return false;
-                       }
-
-                   }
-               }
-
-           } */
-
-
+                return false;
+            }
+        }
         public bool insertarSurcursalSQL(int IDSucursal, string NombreSucursal, string Coordenadas, string Direccion, string CedulaAdmin)
         {
             using (SqlConnection con = new SqlConnection(conexion))
