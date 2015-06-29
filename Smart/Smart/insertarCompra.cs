@@ -73,7 +73,6 @@ namespace Smart
         private void InsertarCompra_Load(object sender, EventArgs e)
         {
             string fecha = DateTime.Now.ToString().Substring(0, 10);
-            string hora = DateTime.Now.ToString().Substring(10, 10);
             labelFecha.Text = fecha;
             labelHora.Text = DateTime.Now.ToString("HH:mm");
 

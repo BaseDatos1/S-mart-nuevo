@@ -37,7 +37,7 @@ namespace Smart
                 if (result)
                 {
                     MessageBox.Show("Producto almacenado correctamente, debe asociarle al menos una categoría", "Insertar Producto");
-
+                    baseDatos.insertarDatos("Insert into Vende VALUES('" + int.Parse(txtCantidad.Text) + "', '" + GlobalVar.IdSucursalActual + "', '" +txtExterno.Text+ "' )");
                     insCategoria agregar = new insCategoria(txtExterno.Text);
                     agregar.Show();
                     

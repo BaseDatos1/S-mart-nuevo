@@ -115,7 +115,7 @@ namespace Smart
                     {
                         baseDatos.obtenerSucursal("Select ID_Sucursal FROM Sucursal WHERE Cédula_AdminSucursal ='" + txtCedula.Text + "'");
                         GlobalVar.CedulaUsuarioActual = txtCedula.Text;
-                        GlobalVar.TipoUsuarioSistema = tipoDeUsuario;
+                        GlobalVar.TipoUsuarioSistema = "Administrador de Sucursal";
                         MessageBox.Show("El usuario se ha registrado con éxito en el sistema S-mart.", "Registrar usuario");
                         MenuAdminSucursal admin = new MenuAdminSucursal();
                         admin.Show();
@@ -135,7 +135,7 @@ namespace Smart
                     {
                         baseDatos.obtenerSucursal("Select ID_Sucursal FROM Cajero WHERE Cedula ='" + txtCedula.Text + "'");
                         GlobalVar.CedulaUsuarioActual = txtCedula.Text;
-                        GlobalVar.TipoUsuarioSistema = tipoDeUsuario;
+                        GlobalVar.TipoUsuarioSistema = "Cajero";
                         MessageBox.Show("El usuario se ha registrado con éxito en el sistema S-mart.", "Registrar usuario");
                         MenuCajero cajero = new MenuCajero();
                         cajero.Show();

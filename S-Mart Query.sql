@@ -100,7 +100,7 @@ CREATE TABLE Compra(
 	Id_compra int IDENTITY(1,1) PRIMARY KEY,
 	Num_caja int check(Num_caja > 0),
 	Fecha datetime,
-	Peso int check(Peso > 0),
+	Peso float check(Peso > 0),
 	Monto int check(Monto > 0),
 	Modo_Pago varchar(20) not null,
 	Cédula_Cliente varchar(15) default '0000000000' FOREIGN KEY REFERENCES Cliente(Cedula)
