@@ -305,6 +305,7 @@
             this.usuariosToolStripMenuItem2.Name = "usuariosToolStripMenuItem2";
             this.usuariosToolStripMenuItem2.Size = new System.Drawing.Size(154, 22);
             this.usuariosToolStripMenuItem2.Text = "Usuario";
+            this.usuariosToolStripMenuItem2.Click += new System.EventHandler(this.usuariosToolStripMenuItem2_Click);
             // 
             // compraToolStripMenuItem2
             // 

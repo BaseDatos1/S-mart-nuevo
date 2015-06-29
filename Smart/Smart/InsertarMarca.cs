@@ -33,7 +33,9 @@ namespace Smart
                 bool agregarMarca = baseDatos.insertarMarca(txtMarca.Text, txtDistruibuidor.Text);
 
                 if (agregarMarca)
-                {
+                {   
+                    txtDistruibuidor.Text = "";
+                    txtMarca.Text = "";
                     MessageBox.Show("Se ha ingresado correctamente la marca en el sistema S-mart.", "Insertar Marca");
                 }
 

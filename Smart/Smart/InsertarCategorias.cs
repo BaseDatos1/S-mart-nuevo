@@ -28,6 +28,8 @@ namespace Smart
                 bool result = baseDatos.insertarDatos(consulta);
                 if (result)
                 {
+                    txtNombre.Text = "";
+                    txtdescripcion.Text = "";
                     MessageBox.Show("Característica para asignar a productos almacenada correctamente", "Insertar Producto");
                 }
 
@@ -60,7 +62,8 @@ namespace Smart
 
          public void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            soloLetras(e);
+           noEsGuion(e);
+             
         }
 
          public void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)

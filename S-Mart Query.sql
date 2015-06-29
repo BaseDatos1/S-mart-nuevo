@@ -45,7 +45,8 @@ VALUES ('0000000000', 'Dummy', 'Dummy', 'Dummy', '00000000', 'dummy', 'dummy');
 
 CREATE TABLE Admin_Sucursal(
 
-	Cedula varchar(15) FOREIGN KEY REFERENCES Persona(Cedula),
+	Cedula varchar(15) FOREIGN KEY REFERENCES Persona(Cedula)
+	ON DELETE CASCADE,
 
 	PRIMARY KEY (Cedula)
 );
@@ -53,7 +54,8 @@ CREATE TABLE Admin_Sucursal(
 
 CREATE TABLE Cliente(
 
-	Cedula varchar(15) FOREIGN KEY REFERENCES Persona(Cedula),
+	Cedula varchar(15) FOREIGN KEY REFERENCES Persona(Cedula)
+	ON DELETE CASCADE,
 	PRIMARY KEY (Cedula)
 );
 
@@ -89,7 +91,8 @@ CREATE TABLE Telefono(
 
 CREATE TABLE Cajero(
 	
-	Cedula varchar(15) FOREIGN KEY REFERENCES Persona(Cedula),
+	Cedula varchar(15) FOREIGN KEY REFERENCES Persona(Cedula)
+	ON DELETE CASCADE,
 	ID_Sucursal int FOREIGN KEY REFERENCES Sucursal(Id_Sucursal),
 
 	PRIMARY KEY (Cedula)		
@@ -111,7 +114,8 @@ CREATE TABLE Compra(
 
 CREATE TABLE Encargado_De_Inventario(
 
-	Cedula varchar(15) FOREIGN KEY REFERENCES Persona(Cedula),
+	Cedula varchar(15) FOREIGN KEY REFERENCES Persona(Cedula)
+	ON DELETE CASCADE,
 	ID_Sucursal int FOREIGN KEY REFERENCES Sucursal(Id_Sucursal),
 
 	PRIMARY KEY (Cedula)
@@ -131,7 +135,8 @@ CREATE TABLE Tarjeta(
 CREATE TABLE Guarda(
 	Cedula_EncargadoDeInventario varchar (15) FOREIGN KEY REFERENCES Encargado_De_Inventario(Cedula),
 	CBExterno_Producto varchar(30) FOREIGN KEY REFERENCES Producto(CBExterno)
-	ON DELETE NO ACTION
+	ON UPDATE CASCADE
+	ON DELETE NO ACTION,
 	PRIMARY KEY (Cedula_EncargadoDeInventario,CBExterno_Producto)
 );
 
@@ -139,6 +144,7 @@ CREATE TABLE Guarda(
 CREATE TABLE Posee(
 	ID_Compra int FOREIGN KEY REFERENCES Compra(ID_Compra),
 	CBExterno_Producto varchar(30) FOREIGN KEY REFERENCES Producto(CBExterno)
+	ON UPDATE CASCADE
 	ON DELETE NO ACTION,
 	Precio int check(Precio > 0),
 	Cantidad int check(Cantidad > 0),
@@ -151,6 +157,7 @@ CREATE TABLE Vende(
 	cantidad int,
 	ID_Sucursal int FOREIGN KEY REFERENCES Sucursal(Id_Sucursal),
 	CBExterno_Producto varchar(30) FOREIGN KEY REFERENCES Producto(CBExterno)
+	ON UPDATE CASCADE
 	ON DELETE NO ACTION,
 
 	PRIMARY KEY (ID_Sucursal, CBExterno_Producto)
@@ -161,6 +168,7 @@ CREATE TABLE Asignado(
 
 	ID_Categoria int FOREIGN KEY REFERENCES Categoria(Id_cat) ON DELETE NO ACTION,
 	CBExterno_Producto varchar(30) FOREIGN KEY REFERENCES Producto(CBExterno)
+	ON UPDATE CASCADE
 	ON DELETE NO ACTION,
 
 	PRIMARY KEY (ID_Categoria,CBExterno_Producto)
@@ -170,6 +178,7 @@ CREATE TABLE Asignado(
 CREATE TABLE Contiene(
 
 	CBExterno_Producto varchar(30) FOREIGN KEY REFERENCES Producto(CBExterno)
+	ON UPDATE CASCADE
 	ON DELETE NO ACTION,
 
 	ID_ListaCompras int FOREIGN KEY REFERENCES Lista_De_Compras(ID_Lista),
@@ -178,3 +187,5 @@ CREATE TABLE Contiene(
 
 	PRIMARY KEY (CBExterno_Producto, ID_ListaCompras)
 )
+
+select* from Persona

@@ -120,5 +120,12 @@ namespace Smart
             this.Hide();
         }
 
+        private void usuariosToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            EliminarUsuario usuario = new EliminarUsuario();
+            usuario.Show();
+            this.Hide();
+        }
+
     }
 }
