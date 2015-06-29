@@ -362,8 +362,6 @@ namespace Smart
             SqlCommand cmd = null;
          
 
-            MessageBox.Show("El codigo a borrar es: " + codigoExterno);
-
             try
             {
 

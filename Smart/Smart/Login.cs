@@ -72,7 +72,7 @@ namespace Smart
                     }
                     else if (tipoUsuario.Text == "Encargado de Inventario")
                     {
-                        MessageBox.Show("Entr a encarg. de inventario");
+                      
                         consultaUsuario = "SELECT Encargado_De_Inventario.Cedula FROM Encargado_De_Inventario WHERE Encargado_De_Inventario.Cedula ='" + txtCedula.Text + "'";
                         existeConsulta = baseDatos.existe(consultaUsuario);
 

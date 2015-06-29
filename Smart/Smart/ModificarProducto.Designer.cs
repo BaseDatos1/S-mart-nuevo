@@ -79,7 +79,7 @@
             // DTPVencimiento
             // 
             this.DTPVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTPVencimiento.Location = new System.Drawing.Point(127, 69);
+            this.DTPVencimiento.Location = new System.Drawing.Point(127, 70);
             this.DTPVencimiento.Name = "DTPVencimiento";
             this.DTPVencimiento.Size = new System.Drawing.Size(223, 22);
             this.DTPVencimiento.TabIndex = 14;
@@ -87,10 +87,10 @@
             // 
             // txtNuevoValorTexto
             // 
-            this.txtNuevoValorTexto.Location = new System.Drawing.Point(127, 69);
+            this.txtNuevoValorTexto.Location = new System.Drawing.Point(127, 70);
             this.txtNuevoValorTexto.MaxLength = 30;
             this.txtNuevoValorTexto.Name = "txtNuevoValorTexto";
-            this.txtNuevoValorTexto.Size = new System.Drawing.Size(176, 22);
+            this.txtNuevoValorTexto.Size = new System.Drawing.Size(223, 22);
             this.txtNuevoValorTexto.TabIndex = 13;
             this.txtNuevoValorTexto.Visible = false;
             this.txtNuevoValorTexto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNuevoValorTexto_KeyPress);
@@ -100,7 +100,7 @@
             this.txtNuevoValorNumero.Location = new System.Drawing.Point(127, 69);
             this.txtNuevoValorNumero.MaxLength = 30;
             this.txtNuevoValorNumero.Name = "txtNuevoValorNumero";
-            this.txtNuevoValorNumero.Size = new System.Drawing.Size(176, 22);
+            this.txtNuevoValorNumero.Size = new System.Drawing.Size(223, 22);
             this.txtNuevoValorNumero.TabIndex = 12;
             this.txtNuevoValorNumero.Visible = false;
             this.txtNuevoValorNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNuevoValorNumero_KeyPress);

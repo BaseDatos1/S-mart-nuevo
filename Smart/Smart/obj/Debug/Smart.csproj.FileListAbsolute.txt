@@ -244,3 +244,30 @@ C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica
 C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerCategorias.resources
 C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerProductosPorProductos.resources
 C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.csproj.GenerateResource.Cache
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\bin\Debug\Smart.exe.config
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.exe
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.pdb
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\bin\Debug\Smart.exe
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\bin\Debug\Smart.pdb
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.csprojResolveAssemblyReference.cache
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.EliminarUsuario.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.ModificarProducto.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerProductosPorMarcas.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerMarcas.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarMarca.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.MenuAdminSucursal.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarCategorias.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarCompra.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarSucursal.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.insCategoria.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarProducto.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.MenuAdmin.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.Login.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.MenuCajero.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.MenuEncargado.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.OpcIniciales.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.Properties.Resources.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.Registrarse.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerCategorias.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerProductosPorProductos.resources
+C:\Users\B35311\Documents\GitHub\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.csproj.GenerateResource.Cache
