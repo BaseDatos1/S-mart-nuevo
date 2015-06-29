@@ -17,7 +17,7 @@ namespace Smart
     class AccesoBaseDatos
     {
         /*En Initial Catalog se agrega la base de datos propia. Intregated Security es para utilizar Windows Authentication*/
-        String conexion = @"Data Source=JEDUARDOPS-HP\SQLEXPRESS; Initial Catalog=Supermercado_inteligente; Integrated Security=SSPI";
+        String conexion = @"Data Source=LARI-PC; Initial Catalog=Supermercado_inteligente; Integrated Security=SSPI";
        
         /*En data source siempre se cambia por el servidor local de la compu*/   
         /**
@@ -334,6 +334,59 @@ namespace Smart
                 return false;
             }
         }
+
+        public bool modificarProducto(string atributo, string nuevoValor, string codigoExterno)
+        {
+            SqlConnection con = new SqlConnection(conexion);
+            con.Open();
+            SqlCommand cmd = null;
+
+            MessageBox.Show("El codigo a borrar es: " + codigoExterno);
+
+            try
+            {
+                if (atributo == "CBExterno" | atributo == "CBInterno"| atributo == "Desc_Larga"|atributo == "Desc_Corta")
+                {
+                    cmd = new SqlCommand("Update Producto SET @atributo = @nuevoValor where CBEXTERNO = @externo", con);
+                    cmd.Parameters.AddWithValue("@atributo", atributo);
+                    cmd.Parameters.AddWithValue("@nuevoValor", nuevoValor);
+                    cmd.Parameters.AddWithValue("@externo", codigoExterno);
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                else if (atributo == "Id_Marca")
+                {
+                    MessageBox.Show("No es posible cambiar la marca del producto.");
+                    return false;
+                }
+                else if (atributo == "Peso")
+                {
+                    string valorAtributo = nuevoValor;
+                    float atributoFloat = float.Parse(valorAtributo);
+                    cmd.Parameters.AddWithValue("@atributo", atributo);
+                    cmd.Parameters.AddWithValue("@nuevoValor", atributoFloat);
+                    cmd.Parameters.AddWithValue("@externo", codigoExterno);
+                    return true;
+                }
+
+                else
+                {
+                    string valorAtributo = nuevoValor;
+                    int atributoNumerico = int.Parse(valorAtributo);
+                    cmd.Parameters.AddWithValue("@atributo", atributo);
+                    cmd.Parameters.AddWithValue("@nuevoValor", atributoNumerico);
+                    cmd.Parameters.AddWithValue("@externo", codigoExterno);
+                    return true;
+                }
+            }
+
+            catch (SqlException ex)
+            {
+                MessageBox.Show("No es posible modificar el producto debido a que se ingresaron datos inválidos. " + ex.Message);
+                return false;
+            }          
+        }
+
 
         
 
