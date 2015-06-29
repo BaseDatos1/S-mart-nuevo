@@ -107,8 +107,9 @@ namespace Smart
         }
 
         private void EliminarUsuario_Load(object sender, EventArgs e)
-        {            
-            
+        {
+            string consulta = "SELECT * FROM Persona";
+            baseDatos.llenarTabla(consulta, displayUsuarios);
         }
 
      

@@ -430,7 +430,7 @@ namespace Smart
                 }
 
 
-                if(atributoModificar== "Desc_Larga" || atributoModificar== "Desc_Corta" )
+                if (atributoModificar == "Desc_Larga" || atributoModificar == "Desc_Corta" || atributoModificar == "CBExterno" || atributoModificar == "CBinterno")
                 {
                     cmd.Parameters.AddWithValue("@nuevoValor", nuevoValor);                    
                     cmd.Parameters.AddWithValue("@externo", codigoExterno);
