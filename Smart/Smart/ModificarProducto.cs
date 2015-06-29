@@ -29,32 +29,122 @@ namespace Smart
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             bool existeConsulta = false;
-            if (cmbCriterioModificar.Text != "" && txtExterno.Text != "" && txtNuevoValor.Text != "")
+            string consulta = "";
+            string atributo = "";
+            string valorNuevo = "";
+
+            if (cmbCriterioModificar.Text != "" && txtExterno.Text != "" && (txtNuevoValorNumero.Text != "" || txtNuevoValorTexto.Text != "" || txtDescripcion.Text != "" || DTPVencimiento.Text != ""))
             {
-                String consultarProducto = "SELECT Producto.CBExterno FROM Producto WHERE Producto.CBExterno = '" + txtExterno.Text + "'";
-                existeConsulta = baseDatos.existe(consultarProducto);
+
+                if (cmbCriterioModificar.Text == "Código Externo")
+                {
+                    consulta = "Select Producto.CBExterno FROM Producto, Asignado WHERE Producto.CBExterno = '" + txtExterno.Text + "' AND Asignado.CBExterno_Producto = '" + txtExterno.Text + "'";
+                    existeConsulta = baseDatos.existe(consulta);
+                    atributo = "CBExterno";
+                    valorNuevo = txtNuevoValorNumero.Text;
+                }
+                else if (cmbCriterioModificar.Text == "Código Interno")
+                {
+                    consulta = "Select Producto.CBExterno FROM Producto, Asignado WHERE Producto.CBExterno = '" + txtExterno.Text + "' AND Asignado.CBExterno_Producto = '" + txtExterno.Text + "'";
+                    existeConsulta = baseDatos.existe(consulta);
+                    atributo = "CBinterno";
+                    valorNuevo = txtNuevoValorNumero.Text;
+                }
+                else if (cmbCriterioModificar.Text == "Costo")
+                {
+                    consulta = "Select Producto.CBExterno FROM Producto, Asignado WHERE Producto.CBExterno = '" + txtExterno.Text + "' AND Asignado.CBExterno_Producto = '" + txtExterno.Text + "'";
+                    existeConsulta = baseDatos.existe(consulta);
+                    atributo = "Costo";
+                    valorNuevo = txtNuevoValorNumero.Text;
+                }
+                else if (cmbCriterioModificar.Text == "Precio Actual")
+                {
+                    consulta = "Select Producto.CBExterno FROM Producto, Asignado WHERE Producto.CBExterno = '" + txtExterno.Text + "' AND Asignado.CBExterno_Producto = '" + txtExterno.Text + "'";
+                    existeConsulta = baseDatos.existe(consulta);
+                    atributo = "Precio";
+                    valorNuevo = txtNuevoValorNumero.Text;
+                }
+                else if (cmbCriterioModificar.Text == "Fecha de vencimiento")
+                {
+                    consulta = "Select Producto.CBExterno FROM Producto, Asignado WHERE Producto.CBExterno = '" + txtExterno.Text + "' AND Asignado.CBExterno_Producto = '" + txtExterno.Text + "'";
+                    existeConsulta = baseDatos.existe(consulta);
+                    atributo = "Fecha";
+                    valorNuevo = DTPVencimiento.Text;
+                }
+                else if (cmbCriterioModificar.Text == "Peso")
+                {
+                    consulta = "Select Producto.CBExterno FROM Producto, Asignado WHERE Producto.CBExterno = '" + txtExterno.Text + "' AND Asignado.CBExterno_Producto = '" + txtExterno.Text + "'";
+                    existeConsulta = baseDatos.existe(consulta);
+                    atributo = "Peso";
+                    valorNuevo = txtNuevoValorNumero.Text;
+                }
+                else if (cmbCriterioModificar.Text == "Medida de alto (cm)")
+                {
+                    consulta = "Select Producto.CBExterno FROM Producto, Asignado WHERE Producto.CBExterno = '" + txtExterno.Text + "' AND Asignado.CBExterno_Producto = '" + txtExterno.Text + "'";
+                    existeConsulta = baseDatos.existe(consulta);
+                    atributo = "Alto";
+                    valorNuevo = txtNuevoValorNumero.Text;
+                }
+                else if (cmbCriterioModificar.Text == "Medida de largo (cm)")
+                {
+                    consulta = "Select Producto.CBExterno FROM Producto, Asignado WHERE Producto.CBExterno = '" + txtExterno.Text + "' AND Asignado.CBExterno_Producto = '" + txtExterno.Text + "'";
+                    existeConsulta = baseDatos.existe(consulta);
+                    atributo = "Largo";
+                    valorNuevo = txtNuevoValorNumero.Text;
+                }
+                else if (cmbCriterioModificar.Text == "Medida de ancho (cm)")
+                {
+                    consulta = "Select Producto.CBExterno FROM Producto, Asignado WHERE Producto.CBExterno = '" + txtExterno.Text + "' AND Asignado.CBExterno_Producto = '" + txtExterno.Text + "'";
+                    existeConsulta = baseDatos.existe(consulta);
+                    atributo = "Ancho";
+                    valorNuevo = txtNuevoValorNumero.Text;
+                }
+                else if (cmbCriterioModificar.Text == "Descripción Larga")
+                {
+                    consulta = "Select Producto.CBExterno FROM Producto, Asignado WHERE Producto.CBExterno = '" + txtExterno.Text + "' AND Asignado.CBExterno_Producto = '" + txtExterno.Text + "'";
+                    existeConsulta = baseDatos.existe(consulta);
+                    atributo = "Desc_Larga";
+                    valorNuevo = txtDescripcion.Text;
+                }
+                else if (cmbCriterioModificar.Text == "Descripción Corta")
+                {
+                    consulta = "Select Producto.CBExterno FROM Producto, Asignado WHERE Producto.CBExterno = '" + txtExterno.Text + "' AND Asignado.CBExterno_Producto = '" + txtExterno.Text + "'";
+                    existeConsulta = baseDatos.existe(consulta);
+                    atributo = "Desc_Corta";
+                    valorNuevo = txtDescripcion.Text;
+                }
+
+
                 if (existeConsulta)
                 {
-                    String atributo = cmbCriterioModificar.Text;
-                     MessageBox.Show("El atributo es: " + atributo);
-                    bool modificacionProducto = baseDatos.modificarProducto(atributo, txtNuevoValor.Text, txtExterno.Text);
 
-                    if(modificacionProducto)
+                    MessageBox.Show("El atributo en modificar Producto es: " + atributo);
+                    bool modificacionProducto = baseDatos.modificarProducto(atributo, valorNuevo, txtExterno.Text);
+
+                    if (modificacionProducto)
                     {
                         MessageBox.Show("El producto se ha modificado con éxito en el sistema S-mart.", "Modificar Producto");
-                        string consulta = "Select Producto.CBExterno, Producto.CBinterno, Producto.Fecha, Producto.Alto, Producto.Largo, Producto.Ancho, Producto.Volumen, Producto.Peso, Producto.Costo, Producto.Precio, Producto.Desc_Larga, Producto.Desc_Corta, Producto.Id_marca, Categoria.Descripción FROM Producto, Categoria, Asignado WHERE Producto.CBExterno = Asignado.CBExterno_Producto and Asignado.ID_Categoria = Categoria.Id_cat";
-                        baseDatos.llenarTabla(consulta, displayProductos);
+                        string consultarProducto = "Select Producto.CBExterno, Producto.CBinterno, Producto.Fecha, Producto.Alto, Producto.Largo, Producto.Ancho, Producto.Volumen, Producto.Peso, Producto.Costo, Producto.Precio, Producto.Desc_Larga, Producto.Desc_Corta, Producto.Id_marca, Categoria.Descripción FROM Producto, Categoria, Asignado WHERE Producto.CBExterno = Asignado.CBExterno_Producto and Asignado.ID_Categoria = Categoria.Id_cat";
+                        baseDatos.llenarTabla(consultarProducto, displayProductos);
 
                     }
                 }
                 else
                 {
-                    MessageBox.Show("El código ingresado es inválido.", "Modificar Producto",
+                    MessageBox.Show("El código o el criterio seleccionado es inválido.", "Modificar Producto",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation,
                     MessageBoxDefaultButton.Button1);
+                    txtExterno.Text = "";
                 }
 
+            }
+            else
+            {
+                  MessageBox.Show("Debe ingresar los datos correspondientes.", "Modificar Producto",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Exclamation,
+                  MessageBoxDefaultButton.Button1);
             }
         }
 
@@ -85,5 +175,99 @@ namespace Smart
                 this.Hide();
             }
         }
+
+        public static void soloNumeros(KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        public static void soloLetras(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        public static void noEsGuion(KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '-' || e.KeyChar == ';')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        public void txtNuevoValorNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(e);
+        }
+
+        public void txtNuevoValorTexto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloLetras(e);
+        }
+
+        public void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noEsGuion(e);
+        }
+
+        public void txtExterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(e);
+        }
+
+
+        private void cmbCriterioModificar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCriterioModificar.SelectedIndex == 0 || cmbCriterioModificar.SelectedIndex == 1 || cmbCriterioModificar.SelectedIndex == 2 || cmbCriterioModificar.SelectedIndex == 3 || cmbCriterioModificar.SelectedIndex == 5 || cmbCriterioModificar.SelectedIndex == 6 || cmbCriterioModificar.SelectedIndex == 7 || cmbCriterioModificar.SelectedIndex == 8)
+            {
+                label3.Visible = true;
+                txtDescripcion.Visible = false;
+                txtNuevoValorNumero.Visible = true;
+                txtNuevoValorTexto.Visible = false;
+                DTPVencimiento.Visible = false;
+            }
+           
+            else if (cmbCriterioModificar.SelectedIndex == 4)
+            {
+                label3.Visible = true;
+                txtDescripcion.Visible = false;
+                txtNuevoValorNumero.Visible = false;
+                txtNuevoValorTexto.Visible = false;
+                DTPVencimiento.Visible = true;
+            }
+            else if (cmbCriterioModificar.SelectedIndex == 9 || cmbCriterioModificar.SelectedIndex == 10)
+            {
+                label3.Visible = true;
+                txtDescripcion.Visible = true;
+                txtNuevoValorNumero.Visible = false;
+                txtNuevoValorTexto.Visible = false;
+                DTPVencimiento.Visible = false;
+            }
+            else
+            {
+                label3.Visible = false;               
+            }
+        }
+
+
+
+
     }
 }

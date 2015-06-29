@@ -30,7 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarProducto));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtNuevoValor = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.DTPVencimiento = new System.Windows.Forms.DateTimePicker();
+            this.txtNuevoValorTexto = new System.Windows.Forms.TextBox();
+            this.txtNuevoValorNumero = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +48,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtNuevoValor);
+            this.groupBox1.Controls.Add(this.txtDescripcion);
+            this.groupBox1.Controls.Add(this.DTPVencimiento);
+            this.groupBox1.Controls.Add(this.txtNuevoValorTexto);
+            this.groupBox1.Controls.Add(this.txtNuevoValorNumero);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label2);
@@ -60,13 +66,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Modificación";
             // 
-            // txtNuevoValor
+            // txtDescripcion
             // 
-            this.txtNuevoValor.Location = new System.Drawing.Point(127, 69);
-            this.txtNuevoValor.MaxLength = 30;
-            this.txtNuevoValor.Name = "txtNuevoValor";
-            this.txtNuevoValor.Size = new System.Drawing.Size(176, 22);
-            this.txtNuevoValor.TabIndex = 12;
+            this.txtDescripcion.Location = new System.Drawing.Point(127, 69);
+            this.txtDescripcion.MaxLength = 30;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(223, 22);
+            this.txtDescripcion.TabIndex = 14;
+            this.txtDescripcion.Visible = false;
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
+            // 
+            // DTPVencimiento
+            // 
+            this.DTPVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTPVencimiento.Location = new System.Drawing.Point(127, 69);
+            this.DTPVencimiento.Name = "DTPVencimiento";
+            this.DTPVencimiento.Size = new System.Drawing.Size(223, 22);
+            this.DTPVencimiento.TabIndex = 14;
+            this.DTPVencimiento.Visible = false;
+            // 
+            // txtNuevoValorTexto
+            // 
+            this.txtNuevoValorTexto.Location = new System.Drawing.Point(127, 69);
+            this.txtNuevoValorTexto.MaxLength = 30;
+            this.txtNuevoValorTexto.Name = "txtNuevoValorTexto";
+            this.txtNuevoValorTexto.Size = new System.Drawing.Size(176, 22);
+            this.txtNuevoValorTexto.TabIndex = 13;
+            this.txtNuevoValorTexto.Visible = false;
+            this.txtNuevoValorTexto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNuevoValorTexto_KeyPress);
+            // 
+            // txtNuevoValorNumero
+            // 
+            this.txtNuevoValorNumero.Location = new System.Drawing.Point(127, 69);
+            this.txtNuevoValorNumero.MaxLength = 30;
+            this.txtNuevoValorNumero.Name = "txtNuevoValorNumero";
+            this.txtNuevoValorNumero.Size = new System.Drawing.Size(176, 22);
+            this.txtNuevoValorNumero.TabIndex = 12;
+            this.txtNuevoValorNumero.Visible = false;
+            this.txtNuevoValorNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNuevoValorNumero_KeyPress);
             // 
             // label3
             // 
@@ -76,6 +113,7 @@
             this.label3.Size = new System.Drawing.Size(86, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "Nuevo Valor:";
+            this.label3.Visible = false;
             // 
             // btnBuscar
             // 
@@ -104,6 +142,7 @@
             this.txtExterno.Name = "txtExterno";
             this.txtExterno.Size = new System.Drawing.Size(200, 22);
             this.txtExterno.TabIndex = 2;
+            this.txtExterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExterno_KeyPress);
             // 
             // cmbCriterioModificar
             // 
@@ -117,11 +156,14 @@
             "Peso",
             "Medida de alto (cm)",
             "Medida de largo (cm)",
-            "Medida de ancho (cm)"});
+            "Medida de ancho (cm)",
+            "Descripción Larga",
+            "Descripción Corta"});
             this.cmbCriterioModificar.Location = new System.Drawing.Point(127, 28);
             this.cmbCriterioModificar.Name = "cmbCriterioModificar";
             this.cmbCriterioModificar.Size = new System.Drawing.Size(176, 24);
             this.cmbCriterioModificar.TabIndex = 1;
+            this.cmbCriterioModificar.SelectedIndexChanged += new System.EventHandler(this.cmbCriterioModificar_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -183,8 +225,11 @@
         private System.Windows.Forms.ComboBox cmbCriterioModificar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView displayProductos;
-        private System.Windows.Forms.TextBox txtNuevoValor;
+        private System.Windows.Forms.TextBox txtNuevoValorNumero;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnatras;
+        private System.Windows.Forms.TextBox txtNuevoValorTexto;
+        private System.Windows.Forms.DateTimePicker DTPVencimiento;
+        private System.Windows.Forms.TextBox txtDescripcion;
     }
 }

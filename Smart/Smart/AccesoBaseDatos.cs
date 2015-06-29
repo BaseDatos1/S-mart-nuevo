@@ -17,7 +17,7 @@ namespace Smart
     class AccesoBaseDatos
     {
         /*En Initial Catalog se agrega la base de datos propia. Intregated Security es para utilizar Windows Authentication*/
-        String conexion = @"Data Source=LARI-PC; Initial Catalog=Supermercado_inteligente; Integrated Security=SSPI";
+        String conexion = @"Data Source=JEDUARDOPS-HP\SQLEXPRESS; Initial Catalog=Supermercado_inteligente; Integrated Security=SSPI";
        
         /*En data source siempre se cambia por el servidor local de la compu*/   
         /**
@@ -335,48 +335,115 @@ namespace Smart
             }
         }
 
-        public bool modificarProducto(string atributo, string nuevoValor, string codigoExterno)
+        public bool modificarProducto(string atributoModificar, string nuevoValor, string codigoExterno)
         {
             SqlConnection con = new SqlConnection(conexion);
             con.Open();
             SqlCommand cmd = null;
+         
 
             MessageBox.Show("El codigo a borrar es: " + codigoExterno);
 
             try
             {
-                if (atributo == "CBExterno" | atributo == "CBInterno"| atributo == "Desc_Larga"|atributo == "Desc_Corta")
+
+                if (atributoModificar == "CBExterno" )
                 {
-                    cmd = new SqlCommand("Update Producto SET @atributo = @nuevoValor where CBEXTERNO = @externo", con);
-                    cmd.Parameters.AddWithValue("@atributo", atributo);
-                    cmd.Parameters.AddWithValue("@nuevoValor", nuevoValor);
+                    cmd = new SqlCommand("Update Producto SET CBExterno = @nuevoValor where CBExterno = @externo", con);
+                }
+
+                else if(atributoModificar == "CBinterno")
+                {
+                    cmd = new SqlCommand("Update Producto SET CBinterno = @nuevoValor where CBExterno = @externo", con);
+                }
+
+                else if (atributoModificar == "Desc_Larga")
+                {
+                    cmd = new SqlCommand("Update Producto SET Desc_Larga = @nuevoValor where CBExterno = @externo", con);
+                }
+
+                else if(atributoModificar == "Desc_Corta")
+                {
+                    cmd = new SqlCommand("Update Producto SET Desc_Corta = @nuevoValor where CBExterno = @externo", con);
+                }
+
+                else if (atributoModificar == "Peso")
+                {
+                    cmd = new SqlCommand("Update Producto SET Peso = @nuevoValor where CBExterno = @externo", con);
+               
+                }
+
+                else if (atributoModificar == "Fecha")
+                {
+                    cmd = new SqlCommand("Update Producto SET Fecha = @nuevoValor where CBExterno = @externo", con);
+
+                }
+
+                else if (atributoModificar == "Alto")
+                {
+                    cmd = new SqlCommand("Update Producto SET Alto = @nuevoValor where CBExterno = @externo", con);
+                }
+
+                else if (atributoModificar == "Largo")
+                {
+                    cmd = new SqlCommand("Update Producto SET Largo = @nuevoValor where CBExterno = @externo", con);
+                }
+
+                else if (atributoModificar == "Ancho")
+                {
+                    cmd = new SqlCommand("Update Producto SET Ancho = @nuevoValor where CBExterno = @externo", con);
+                }
+
+                else if (atributoModificar == "Volumen")
+                {
+                    cmd = new SqlCommand("Update Producto SET Volumen = @nuevoValor where CBExterno = @externo", con);
+                }
+
+                else if (atributoModificar == "Costo")
+                {
+                    cmd = new SqlCommand("Update Producto SET Costo = @nuevoValor where CBExterno = @externo", con);
+                }
+
+                else if (atributoModificar == "Precio")
+                {
+                    cmd = new SqlCommand("Update Producto SET Precio = @nuevoValor where CBExterno = @externo", con);
+                }
+
+
+                if(atributoModificar== "Desc_Larga" || atributoModificar== "Desc_Corta" )
+                {
+                    cmd.Parameters.AddWithValue("@nuevoValor", nuevoValor);                    
                     cmd.Parameters.AddWithValue("@externo", codigoExterno);
                     cmd.ExecuteNonQuery();
                     return true;
                 }
-                else if (atributo == "Id_Marca")
-                {
-                    MessageBox.Show("No es posible cambiar la marca del producto.");
-                    return false;
+                else if(atributoModificar== "Fecha")
+                {  
+                    cmd.Parameters.Add("@nuevoValor", SqlDbType.DateTime).Value = nuevoValor; 
+                    cmd.Parameters.AddWithValue("@externo", codigoExterno);
+                    cmd.ExecuteNonQuery();
+                    return true;
                 }
-                else if (atributo == "Peso")
+
+                else if (atributoModificar == "Peso")
                 {
                     string valorAtributo = nuevoValor;
                     float atributoFloat = float.Parse(valorAtributo);
-                    cmd.Parameters.AddWithValue("@atributo", atributo);
                     cmd.Parameters.AddWithValue("@nuevoValor", atributoFloat);
                     cmd.Parameters.AddWithValue("@externo", codigoExterno);
+                    cmd.ExecuteNonQuery();
                     return true;
                 }
 
                 else
                 {
                     string valorAtributo = nuevoValor;
+                    MessageBox.Show("El valor atributo es: " + valorAtributo);
                     int atributoNumerico = int.Parse(valorAtributo);
-                    cmd.Parameters.AddWithValue("@atributo", atributo);
                     cmd.Parameters.AddWithValue("@nuevoValor", atributoNumerico);
                     cmd.Parameters.AddWithValue("@externo", codigoExterno);
-                    return true;
+                    cmd.ExecuteNonQuery();
+                    return true;                     
                 }
             }
 
