@@ -139,7 +139,7 @@ namespace Smart
             {
                 baseDatos.insertarDatos("Insert INTO Posee (ID_Compra, CBExterno_Producto, Precio, Cantidad) VALUES('" + idCompra + "', '" + txtProducto.Text + "', (select Precio FROM Producto WHERE CBExterno = '" + txtProducto.Text + "'), 1 )");
             }
-            baseDatos.llenarTabla("SELECT Producto.CBExterno, Producto.Fecha, Producto.Desc_Corta, Producto.Id_marca, Posee.Precio, Posee.Cantidad FROM Posee, Producto WHERE Posee.Id_Compra = '"+idCompra+ "' and Posee.CBExterno_Producto = Producto.CBExterno", displayProductos);
+            baseDatos.llenarTabla("SELECT Producto.CBExterno, Posee.Precio, Posee.Cantidad, Producto.Fecha, Producto.Desc_Corta, Producto.Id_marca FROM Posee, Producto WHERE Posee.Id_Compra = '" + idCompra + "' and Posee.CBExterno_Producto = Producto.CBExterno", displayProductos);
             txtProducto.Text = "";
         }
     }
