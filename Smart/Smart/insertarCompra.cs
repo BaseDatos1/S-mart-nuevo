@@ -13,7 +13,10 @@ namespace Smart
     public partial class InsertarCompra : Form
     {
         AccesoBaseDatos baseDatos;
-
+        int contador = 0;
+        string sqlFormattedDate;
+        int idCompra;
+        string cedulaCliente;
 
         public InsertarCompra()
         {
@@ -72,9 +75,12 @@ namespace Smart
 
         private void InsertarCompra_Load(object sender, EventArgs e)
         {
-            string fecha = DateTime.Now.ToString().Substring(0, 10);
-            labelFecha.Text = fecha;
-            labelHora.Text = DateTime.Now.ToString("HH:mm");
+           // string fecha = DateTime.Now.ToString().Substring(0, 10);
+            //labelFecha.Text = fecha;
+            //labelHora.Text = DateTime.Now.ToString("HH:mm");
+            labelFecha.Text = DateTime.Now.ToString();
+            DateTime myDateTime = DateTime.Now;
+            sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 
             baseDatos.obtenerDatosUsuario("Select Nombre, Apellido1, Apellido2 FROM Persona WHERE  Cedula = '"+ GlobalVar.CedulaUsuarioActual+ "'", txtCajero);
         }
@@ -87,6 +93,7 @@ namespace Smart
                 baseDatos.obtenerDatosUsuario("Select Nombre, Apellido1, Apellido2 FROM Persona WHERE Cedula = '" + txtCliente.Text + "'", txtCliente);
                 if (revisar != txtCliente.Text)
                 {
+                    cedulaCliente = revisar;
                     txtCliente.ReadOnly = true;
                 }
                 if (revisar == "")
@@ -108,5 +115,33 @@ namespace Smart
                 }
             }
         }
+
+        private void txtProducto_TextChanged(object sender, EventArgs e)
+        {
+            contador++;
+
+            //primera vez de la compra
+            if (contador == 1)
+            {
+                if (txtCliente.Text == "")
+                {
+                    baseDatos.insertarDatos("INSERT INTO Compra (Num_Caja, Fecha, Peso, Monto, Cédula_Cajero, Id_Sucursal, Modo_Pago) VALUES('" + int.Parse(txtCaja.Text) + "', '" + sqlFormattedDate + "', (select Peso From Producto WHERE CBExterno = '" + txtProducto.Text + "'), (select Precio From Producto WHERE CBExterno = '" + txtProducto.Text + "'), '" + GlobalVar.CedulaUsuarioActual + "', '" + GlobalVar.IdSucursalActual + "', '0' )");
+                    
+                }
+                else
+                {
+                    baseDatos.insertarDatos("INSERT INTO Compra (Cédula_Cliente, Num_Caja, Fecha, Peso, Monto, Cédula_Cajero, Id_Sucursal, Modo_Pago) VALUES('" +cedulaCliente + "', '" + int.Parse(txtCaja.Text) + "', '" + sqlFormattedDate + "', (select Peso From Producto WHERE CBExterno = '" + txtProducto.Text + "'), (select Precio From Producto WHERE CBExterno = '" + txtProducto.Text + "'), '" + GlobalVar.CedulaUsuarioActual + "', '" + GlobalVar.IdSucursalActual + "', '0' )");
+                }
+                    idCompra = baseDatos.obtenerIdCompra("SELECT Id_compra FROM Compra WHERE Num_Caja = '" + int.Parse(txtCaja.Text) + "' and Fecha ='" + sqlFormattedDate + "' and Cédula_Cajero = '" + GlobalVar.CedulaUsuarioActual + "'");
+                    baseDatos.insertarDatos("Insert INTO Posee (ID_Compra, CBExterno_Producto, Precio, Cantidad) VALUES('" + idCompra + "', '" + txtProducto.Text + "', (select Precio FROM Producto WHERE CBExterno = '" + txtProducto.Text + "'), 1 )");
+            }
+            else
+            {
+                baseDatos.insertarDatos("Insert INTO Posee (ID_Compra, CBExterno_Producto, Precio, Cantidad) VALUES('" + idCompra + "', '" + txtProducto.Text + "', (select Precio FROM Producto WHERE CBExterno = '" + txtProducto.Text + "'), 1 )");
+            }
+            baseDatos.llenarTabla("SELECT Producto.CBExterno, Producto.Fecha, Producto.Desc_Corta, Producto.Id_marca, Posee.Precio, Posee.Cantidad FROM Posee, Producto WHERE Posee.Id_Compra = '"+idCompra+ "' and Posee.CBExterno_Producto = Producto.CBExterno", displayProductos);
+            txtProducto.Text = "";
+        }
     }
 }
+

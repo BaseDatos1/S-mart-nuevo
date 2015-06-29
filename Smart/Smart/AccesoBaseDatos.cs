@@ -309,6 +309,26 @@ namespace Smart
             }
         }
 
+        public int obtenerIdCompra(string consulta)
+        {
+            SqlDataReader datos = null;
+            datos = ejecutarConsulta(consulta);
+
+            if (datos != null)
+            {
+                while (datos.Read())
+                {
+                    return datos.GetInt32(0);
+                }
+            }
+            else
+            {
+                return -1;
+            }
+
+            return -1;
+        }
+
         public bool insertarDatos(String consulta)
         {
             SqlConnection sqlConnection = new SqlConnection(conexion);
