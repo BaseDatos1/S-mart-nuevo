@@ -57,6 +57,7 @@
             this.txtCodigoExterno.Name = "txtCodigoExterno";
             this.txtCodigoExterno.Size = new System.Drawing.Size(240, 22);
             this.txtCodigoExterno.TabIndex = 1;
+            this.txtCodigoExterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoExterno_KeyPress);
             // 
             // label2
             // 
@@ -98,6 +99,7 @@
             this.txtdescripcion.Name = "txtdescripcion";
             this.txtdescripcion.Size = new System.Drawing.Size(240, 55);
             this.txtdescripcion.TabIndex = 3;
+            this.txtdescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // btnAgregarCaracteristica
             // 

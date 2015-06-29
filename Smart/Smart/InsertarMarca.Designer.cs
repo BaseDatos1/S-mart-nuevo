@@ -54,6 +54,7 @@
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(266, 22);
             this.txtMarca.TabIndex = 1;
+            this.txtMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMarca_KeyPress);
             // 
             // btnAdmin
             // 
@@ -84,6 +85,7 @@
             this.txtDistruibuidor.Name = "txtDistruibuidor";
             this.txtDistruibuidor.Size = new System.Drawing.Size(266, 22);
             this.txtDistruibuidor.TabIndex = 1;
+            this.txtDistruibuidor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDistribuidor_KeyPress);
             // 
             // InsertarMarca
             // 

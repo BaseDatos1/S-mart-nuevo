@@ -89,9 +89,16 @@ namespace Smart
             this.Hide();
         }
 
-        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void verProductosPorProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VerProductosPorProductos verprod = new VerProductosPorProductos();
+            verprod.Show();
+            this.Hide();
+        }
+
+        private void verProductosPorMarcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerProductosPorMarcas verprod = new VerProductosPorMarcas();
             verprod.Show();
             this.Hide();
         }
@@ -104,6 +111,13 @@ namespace Smart
         private void verComprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void modificarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModificarProducto modificar_producto = new ModificarProducto();
+            modificar_producto.Show();
+            this.Hide();
         }
 
     }

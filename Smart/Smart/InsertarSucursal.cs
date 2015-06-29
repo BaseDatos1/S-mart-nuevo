@@ -66,9 +66,30 @@ namespace Smart
     
         private void btnatras_Click(object sender, EventArgs e)
         {
-            MenuAdmin admin = new MenuAdmin();
-            admin.Show();
-            this.Hide();
+            if (GlobalVar.TipoUsuarioSistema == "Administrador")
+            {
+                MenuAdmin admin = new MenuAdmin();
+                admin.Show();
+                this.Hide();
+            }
+            else if (GlobalVar.TipoUsuarioSistema == "Administrador de Sucursal")
+            {
+                MenuAdminSucursal adminSuc = new MenuAdminSucursal();
+                adminSuc.Show();
+                this.Hide();
+            }
+            else if (GlobalVar.TipoUsuarioSistema == "Encargado de Inventario")
+            {
+                MenuEncargado encargado = new MenuEncargado();
+                encargado.Show();
+                this.Hide();
+            }
+            else if (GlobalVar.TipoUsuarioSistema == "Cajero")
+            {
+                MenuCajero cajero = new MenuCajero();
+                cajero.Show();
+                this.Hide();
+            }
         }
 
 
@@ -114,5 +135,69 @@ namespace Smart
         {
 
         }
+        
+        public static void soloNumeros(KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        public static void soloLetras(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        public static void noEsGuion(KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '-' || e.KeyChar == ';')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+
+        private void txtIDSucursal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(e);
+        }
+
+        private void txtNombreSucursal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloLetras(e);
+        }
+
+        private void txtCoordenadas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noEsGuion(e);
+        }
+
+        private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noEsGuion(e);
+        }
+
+        private void txtCedulaAdmin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(e);
+        }
+
+
     }
 }

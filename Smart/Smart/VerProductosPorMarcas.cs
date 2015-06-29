@@ -22,9 +22,30 @@ namespace Smart
 
         private void btnatras_Click(object sender, EventArgs e)
         {
-            MenuAdmin admin = new MenuAdmin();
-            admin.Show();
-            this.Hide();
+            if (GlobalVar.TipoUsuarioSistema == "Administrador")
+            {
+                MenuAdmin admin = new MenuAdmin();
+                admin.Show();
+                this.Hide();
+            }
+            else if (GlobalVar.TipoUsuarioSistema == "Administrador de Sucursal")
+            {
+                MenuAdminSucursal adminSuc = new MenuAdminSucursal();
+                adminSuc.Show();
+                this.Hide();
+            }
+            else if (GlobalVar.TipoUsuarioSistema == "Encargado de Inventario")
+            {
+                MenuEncargado encargado = new MenuEncargado();
+                encargado.Show();
+                this.Hide();
+            }
+            else if (GlobalVar.TipoUsuarioSistema == "Cajero")
+            {
+                MenuCajero cajero = new MenuCajero();
+                cajero.Show();
+                this.Hide();
+            }
         }
 
         private void cmbCriterio_SelectedIndexChanged(object sender, EventArgs e)

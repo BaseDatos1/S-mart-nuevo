@@ -33,12 +33,40 @@ namespace Smart
 
             }
         }
+        
+        public static void soloLetras(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
 
+        public static void noEsGuion(KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '-' || e.KeyChar == ';')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
 
          public void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            soloLetras(e);
         }
+
+         public void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+         {
+             noEsGuion(e);
+         }
 
 
 

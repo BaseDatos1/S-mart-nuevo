@@ -46,5 +46,29 @@ namespace Smart
                 MessageBoxDefaultButton.Button1);
             }
         }
+
+
+        //Verifica que en los "textbox" no se puedan ingresar ';' ni '-'
+        public static void noEsGuion(KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '-' || e.KeyChar == ';')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        public void txtMarca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noEsGuion(e);
+        }
+        public void txtDistribuidor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noEsGuion(e);
+        }
+
     }
 }

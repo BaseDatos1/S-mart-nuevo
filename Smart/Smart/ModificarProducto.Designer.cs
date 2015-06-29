@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarProducto));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNuevoValor = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtExterno = new System.Windows.Forms.TextBox();
             this.cmbCriterioModificar = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.displayProductos = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtNuevoValor = new System.Windows.Forms.TextBox();
+            this.btnatras = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.displayProductos)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +59,23 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Modificación";
+            // 
+            // txtNuevoValor
+            // 
+            this.txtNuevoValor.Location = new System.Drawing.Point(127, 69);
+            this.txtNuevoValor.MaxLength = 30;
+            this.txtNuevoValor.Name = "txtNuevoValor";
+            this.txtNuevoValor.Size = new System.Drawing.Size(176, 22);
+            this.txtNuevoValor.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(30, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 16);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Nuevo Valor:";
             // 
             // btnBuscar
             // 
@@ -121,22 +140,16 @@
             this.displayProductos.Size = new System.Drawing.Size(663, 411);
             this.displayProductos.TabIndex = 1;
             // 
-            // label3
+            // btnatras
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 16);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Nuevo Valor:";
-            // 
-            // txtNuevoValor
-            // 
-            this.txtNuevoValor.Location = new System.Drawing.Point(127, 69);
-            this.txtNuevoValor.MaxLength = 30;
-            this.txtNuevoValor.Name = "txtNuevoValor";
-            this.txtNuevoValor.Size = new System.Drawing.Size(176, 22);
-            this.txtNuevoValor.TabIndex = 12;
+            this.btnatras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnatras.Location = new System.Drawing.Point(12, 625);
+            this.btnatras.Name = "btnatras";
+            this.btnatras.Size = new System.Drawing.Size(64, 24);
+            this.btnatras.TabIndex = 13;
+            this.btnatras.Text = "Atrás";
+            this.btnatras.UseVisualStyleBackColor = true;
+            this.btnatras.Click += new System.EventHandler(this.btnatras_Click);
             // 
             // ModificarProducto
             // 
@@ -144,9 +157,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(784, 661);
+            this.Controls.Add(this.btnatras);
             this.Controls.Add(this.displayProductos);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ModificarProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -170,5 +185,6 @@
         private System.Windows.Forms.DataGridView displayProductos;
         private System.Windows.Forms.TextBox txtNuevoValor;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnatras;
     }
 }

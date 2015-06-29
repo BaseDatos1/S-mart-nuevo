@@ -86,6 +86,7 @@
             this.txtCedulaAdmin.Size = new System.Drawing.Size(223, 22);
             this.txtCedulaAdmin.TabIndex = 5;
             this.txtCedulaAdmin.Enter += new System.EventHandler(this.txtCedulaAdmin_Enter);
+            this.txtCedulaAdmin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedulaAdmin_KeyPress);
             this.txtCedulaAdmin.Leave += new System.EventHandler(this.txtCedulaAdmin_Leave);
             // 
             // txtDireccion
@@ -96,6 +97,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(223, 136);
             this.txtDireccion.TabIndex = 4;
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // txtCoordenadas
             // 
@@ -105,6 +107,7 @@
             this.txtCoordenadas.Name = "txtCoordenadas";
             this.txtCoordenadas.Size = new System.Drawing.Size(223, 136);
             this.txtCoordenadas.TabIndex = 3;
+            this.txtCoordenadas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCoordenadas_KeyPress);
             // 
             // txtNombreSucursal
             // 
@@ -113,6 +116,7 @@
             this.txtNombreSucursal.Name = "txtNombreSucursal";
             this.txtNombreSucursal.Size = new System.Drawing.Size(223, 22);
             this.txtNombreSucursal.TabIndex = 2;
+            this.txtNombreSucursal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreSucursal_KeyPress);
             // 
             // txtIDSucursal
             // 
@@ -121,6 +125,7 @@
             this.txtIDSucursal.Size = new System.Drawing.Size(223, 22);
             this.txtIDSucursal.TabIndex = 1;
             this.txtIDSucursal.Enter += new System.EventHandler(this.txtIDSucursal_Enter);
+            this.txtIDSucursal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDSucursal_KeyPress);
             this.txtIDSucursal.Leave += new System.EventHandler(this.txtIDSucursal_Leave);
             // 
             // labelCedulaAdmin

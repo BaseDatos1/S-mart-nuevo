@@ -81,6 +81,13 @@ namespace Smart
             verprod.Show();
             this.Hide();
         }
+
+        private void modificarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModificarProducto modificar_producto = new ModificarProducto();
+            modificar_producto.Show();
+            this.Hide();
+        }
                                 
     }
 }

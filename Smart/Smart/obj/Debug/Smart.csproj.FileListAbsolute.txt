@@ -218,3 +218,29 @@ C:\Users\b35311\Documents\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.c
 C:\Users\b35311\Documents\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerMarcas.resources
 C:\Users\b35311\Documents\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerProductosPorMarcas.resources
 C:\Users\b35311\Documents\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerProductosPorProductos.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\bin\Debug\Smart.exe.config
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.exe
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.pdb
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\bin\Debug\Smart.exe
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\bin\Debug\Smart.pdb
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.csprojResolveAssemblyReference.cache
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.ModificarProducto.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerProductosPorMarcas.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerMarcas.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarMarca.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.MenuAdminSucursal.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarCategorias.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarCompra.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarSucursal.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.insCategoria.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.InsertarProducto.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.MenuAdmin.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.Login.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.MenuCajero.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.MenuEncargado.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.OpcIniciales.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.Properties.Resources.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.Registrarse.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerCategorias.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.VerProductosPorProductos.resources
+C:\Users\JoséEduardo\Documents\José Eduardo\Estudios\Universidad de Costa Rica\2015\I Ciclo - 2015\Bases de Datos I\Proyecto\Repositorio\S-mart-nuevo\Smart\Smart\obj\Debug\Smart.csproj.GenerateResource.Cache
