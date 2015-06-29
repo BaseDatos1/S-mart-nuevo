@@ -43,5 +43,40 @@ namespace Smart
             string consulta = "Select Descripción FROM Categoria WHERE Nombre = '" + cmbCategorias.Text + "'";
             baseDatos.cargarTexto(consulta, txtdescripcion);
         }
+
+        public static void soloNumeros(KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        public static void noEsGuion(KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '-' || e.KeyChar == ';')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        public void txtCodigoExterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(e);
+        }
+        public void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noEsGuion(e);
+        }
+
+
     }
 }

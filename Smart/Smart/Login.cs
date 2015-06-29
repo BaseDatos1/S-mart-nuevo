@@ -41,10 +41,9 @@ namespace Smart
             }
             else if (txtCedula.Text != "" && txtContrasena.Text != "" && tipoUsuario.Text != "")
             {
-                consultaCedula = "SELECT Persona.Cedula FROM Persona WHERE Persona.Cedula = '" + txtCedula.Text + "' AND Persona.Contraseña = " + txtContrasena.Text;
-
+                consultaCedula = "SELECT Persona.Cedula FROM Persona WHERE Persona.Cedula = '" + txtCedula.Text + "' AND Persona.Contraseña = '" + txtContrasena.Text + "'";
+              
                 existeConsulta = baseDatos.existe(consultaCedula);
-
 
                 if (existeConsulta)
                 {
@@ -56,7 +55,7 @@ namespace Smart
 
                         if (existeConsulta)
                         {
-                            baseDatos.obtenerSucursal("Select ID_Sucursal FROM Sucursal WHERE Cedula_AdminSucursal ='" + txtCedula.Text + "'");
+                            baseDatos.obtenerSucursal("Select ID_Sucursal FROM Sucursal WHERE Cédula_AdminSucursal ='" + txtCedula.Text + "'");
                             GlobalVar.CedulaUsuarioActual = txtCedula.Text;
                             GlobalVar.TipoUsuarioSistema = tipoUsuario.Text;
                             MenuAdminSucursal adminSuc = new MenuAdminSucursal();

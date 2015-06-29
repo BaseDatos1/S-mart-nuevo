@@ -33,5 +33,14 @@ namespace Smart
 
             }
         }
+
+
+         public void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+
+
     }
 }

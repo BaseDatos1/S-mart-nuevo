@@ -36,11 +36,51 @@ namespace Smart
             MessageBox.Show("Proyecto S-mart: Supermercado Inteligente realizado por Gaudy Blanco Meneses, Larissa Arroyo Castillo y José Eduardo Picado Salas para el curso Bases de Datos 1 de la Escuela de Ciencias de la Computación e Informática de la UCR.", "Acerca de");
         }
 
-        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void insertarMarcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertarMarca cat = new InsertarMarca();
+            cat.Show();
+        }
+
+        private void insertarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertarCategorias categorias = new InsertarCategorias();
+            categorias.Show();
+        }
+
+        private void insertarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InsertarProducto insProd = new InsertarProducto();
             insProd.Show();
             this.Hide();
         }
+
+        private void verMarcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerMarcas ver_marcas = new VerMarcas();
+            ver_marcas.Show();
+        }
+
+        private void verCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerCategorias cat = new VerCategorias();
+            cat.Show();
+            this.Hide();
+        }
+
+        private void verProductosPorProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerProductosPorProductos verprod = new VerProductosPorProductos();
+            verprod.Show();
+            this.Hide();
+        }
+
+        private void verProductosPorMarcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerProductosPorMarcas verprod = new VerProductosPorMarcas();
+            verprod.Show();
+            this.Hide();
+        }
+                                
     }
 }
