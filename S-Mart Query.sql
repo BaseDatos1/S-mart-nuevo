@@ -187,5 +187,3 @@ CREATE TABLE Contiene(
 
 	PRIMARY KEY (CBExterno_Producto, ID_ListaCompras)
 )
-
-select* from Persona
